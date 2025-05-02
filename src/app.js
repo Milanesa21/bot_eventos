@@ -1,45 +1,76 @@
-const { createBot, createProvider, createFlow } = require('@bot-whatsapp/bot')
-const QRPortalWeb = require('@bot-whatsapp/portal')
-const BaileysProvider = require('@bot-whatsapp/provider/baileys')
-const MockAdapter = require('@bot-whatsapp/database/mock')
+// app.js
+const { createBot, createProvider, createFlow } = require("@bot-whatsapp/bot");
+const QRPortalWeb = require("@bot-whatsapp/portal");
+const BaileysProvider = require("@bot-whatsapp/provider/baileys");
+const MockAdapter = require("@bot-whatsapp/database/mock");
 
-// Importar todos los flujos, incluidos los nuevos de datos del cliente
-const flowPrincipal = require('./flows/flowPrincipal')
-const flowMenuInfantil = require('./flows/flowMenuInfantil')
-const flowMenuEventos = require('./flows/flowMenuEventos')
-const flowAgregarItems = require('./flows/flowAgregarItems')
-const flowDatosCliente = require('./flows/flowDatosCliente')
-const flowTelefono = require('./flows/flowTelefono')
-const flowEmail = require('./flows/flowEmail')
-const flowConfirmacionDatos = require('./flows/flowConfirmacionDatos')
-const flowConfirmacion = require('./flows/flowConfirmacion')
-const flowCancelar = require('./flows/flowCancelar')
-const flowConsulta = require('./flows/flowConsulta')
+// Importar flujos
+const flowPrincipal = require("./flows/flowPrincipal");
+const flowAgregarItems = require("./flows/flowAgregarItems");
+const flowPernil = require("./flows/flowPernil");
+const flowTernera = require("./flows/flowTernera");
+const flowBondiola = require("./flows/flowBondiola");
+const flowSalsas = require("./flows/flowSalsas");
+const flowComboPernil = require("./flows/flowComboPernil");
+const flowComboTernera = require("./flows/flowComboTernera");
+const flowSoloMinutas = require("./flows/flowSoloMinutas");
+const flowBoxChips = require("./flows/flowBoxChips");
+const flowMenuKids = require("./flows/flowMenuKids");
+const flowPanaderia = require("./flows/flowPanaderia");
+const flowDatosCliente = require("./flows/flowDatosCliente");
+const flowConfirmacion = require("./flows/flowConfirmacion");
+const flowConsulta = require("./flows/flowConsulta");
+const flowWelcome = require("./flows/flowWelcome")
+const flowFechaEvento = require("./flows/flowFechaEvento")
+const flowDireccionEntrega = require("./flows/flowDireccionEntrega")
+const flowComentarios = require("./flows/flowComentarios");
+const flowCantidad = require("./flows/flowCantidad")
+const flowPago = require("./flows/flowPago")
+const flowFileteado = require("./flows/flowFileteado")
 
-const main = async () => {
-    const adapterDB = new MockAdapter()
-    const adapterFlow = createFlow([
-        flowPrincipal,
-        flowMenuInfantil,
-        flowMenuEventos,
-        flowAgregarItems,
-        flowDatosCliente,
-        flowTelefono,
-        flowEmail,
-        flowConfirmacionDatos,
-        flowConfirmacion,
-        flowCancelar,
-        flowConsulta
-    ])
-    const adapterProvider = createProvider(BaileysProvider)
 
-    createBot({
-        flow: adapterFlow,
-        provider: adapterProvider,
-        database: adapterDB,
-    })
+async function main() {
+  // Base de datos en memoria
+  const adapterDB = new MockAdapter();
 
-    QRPortalWeb()
+  // Crear el flujo maestro
+  const adapterFlow = createFlow([
+    flowPrincipal,
+    flowAgregarItems,
+    flowPernil,
+    flowTernera,
+    flowBondiola,
+    flowSalsas,
+    flowComboPernil,
+    flowComboTernera,
+    flowSoloMinutas,
+    flowBoxChips,
+    flowMenuKids,
+    flowPanaderia,
+    flowDatosCliente,
+    flowConfirmacion,
+    flowConsulta,
+    flowWelcome,
+    flowFechaEvento,
+    flowDireccionEntrega,
+    flowComentarios,
+    flowCantidad,
+    flowPago,
+    flowFileteado,
+  ]);
+
+  // Proveedor de WhatsApp
+  const adapterProvider = createProvider(BaileysProvider);
+
+  // Crear bot
+  createBot({
+    flow: adapterFlow,
+    provider: adapterProvider,
+    database: adapterDB,
+  });
+
+  // Mostrar QR en navegador
+  QRPortalWeb();
 }
 
-main()
+main();

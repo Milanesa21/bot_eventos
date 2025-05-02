@@ -1,42 +1,26 @@
-const { addKeyword } = require('@bot-whatsapp/bot')
-const { resetPedido } = require('../helpers/estadoPedido')
+// flows/flowAgregarItems.js
+const { addKeyword, EVENTS } = require("@bot-whatsapp/bot");
 
-const flowAgregarItems = addKeyword('agregar')
-    .addAnswer(
-        '¿Qué deseas hacer ahora?\n\n' +
-        '1. Agregar otro producto\n' +
-        '2. Ver otros menús\n' +
-        '3. Finalizar pedido\n' +
-        '4. Volver al inicio',
-        { capture: true },
-        async (ctx, { gotoFlow, state }) => {
-            const opcion = ctx.body.trim()
-            
-            const MenuInfantil = require('./flowMenuInfantil')
-            const MenuEventos = require('./flowMenuEventos')
-            const Principal = require('./flowPrincipal')
-            const DatosCliente = require('./flowDatosCliente')
-            
-            switch(opcion) {
-                case '1': {
-                    const menuActual = await state.get('menuActual')
-                    return gotoFlow(menuActual === 'infantil' ? MenuInfantil : MenuEventos)
-                }
-                
-                case '2':
-                    return gotoFlow(Principal)
-                
-                case '3':
-                    return gotoFlow(DatosCliente)
-                
-                case '4':
-                    await resetPedido(state)
-                    return gotoFlow(Principal)
-                
-                default:
-                    return gotoFlow(flowAgregarItems)
-            }
-        }
-    )
+const flowAgregarItems = addKeyword(EVENTS.ACTION).addAnswer(
+  [
+    "✅ *Producto agregado.*",
+    "",
+    "¿Deseas agregar más productos?",
+    "1️⃣ Sí, volver al menú principal",
+    "2️⃣ No, continuar con mi pedido",
+  ].join("\n"),
+  { capture: true },
+  async (ctx, { flowDynamic, gotoFlow }) => {
+    const opt = ctx.body.trim();
+    if (opt === "1") {
+      return gotoFlow(require("./flowPrincipal"));
+    }
+    if (opt === "2") {
+      return gotoFlow(require("./flowDatosCliente"));
+    }
+    await flowDynamic("❌ Por favor responde con 1 o 2.");
+    return gotoFlow(module.exports);
+  }
+);
 
-module.exports = flowAgregarItems
+module.exports = flowAgregarItems;
