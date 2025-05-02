@@ -1,5 +1,5 @@
 // flows/flowPrincipal.js
-const { addKeyword } = require("@bot-whatsapp/bot");
+const { addKeyword, EVENTS } = require("@bot-whatsapp/bot");
 // Asegúrate que resetPedido NO se necesita aquí si no vas a resetear el pedido al inicio de este flujo
 // const { resetPedido, pedidoActual } = require("../utils/resetPedido");
 // Si solo necesitas pedidoActual, impórtalo así:
@@ -52,7 +52,7 @@ const mensajeError = [
   "0️⃣ Consultar con el chef",
 ].join("\n");
 
-const flowPrincipal = addKeyword(["hola", "buenas", "inicio", "menu"])
+const flowPrincipal = addKeyword(EVENTS.ACTION)
   // 1) Mensaje de bienvenida (sin resetear pedido aquí, usualmente se hace al inicio del bot o al finalizar)
   .addAction(async (_, { flowDynamic }) => {
     await flowDynamic(

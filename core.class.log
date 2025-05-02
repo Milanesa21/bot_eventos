@@ -1,31 +1,27 @@
 [handleMsg]:  {
   key: {
-    remoteJid: '5493704634534@s.whatsapp.net',
+    remoteJid: '5493704524749@s.whatsapp.net',
     fromMe: false,
-    id: '3EB02A6369697839F68EF5',
+    id: '3EB0217C60329F5C4BC26B',
     participant: undefined
   },
-  messageTimestamp: 1746151955,
-  pushName: 'Tomas',
+  messageTimestamp: 1746152531,
+  pushName: 'Alan ❄️🦋 // Él',
   broadcast: false,
   message: Message {
-    extendedTextMessage: ExtendedTextMessage {
-      text: 'puto',
-      contextInfo: [ContextInfo],
-      inviteLinkGroupTypeV2: 0
-    },
+    conversation: 'o',
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2,
       messageSecret: [Uint8Array]
     }
   },
-  body: 'puto',
-  from: '5493704634534'
+  body: 'o',
+  from: '5493704524749'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_bf510746-b47b-4f5b-b17f-dc2be4e6cf89',
-  keyword: 'key_72ad3c78-fe33-472f-acf3-04ecc4f4f632',
+  ref: 'ans_47c16f7c-8d95-4605-87c8-72dbf5c91ff6',
+  keyword: 'key_ea8857ec-e457-42a8-8db3-d2ed01073be9',
   answer: '👋 ¡Hola! Bienvenido a *Angélica Perniles*',
   options: {
     media: null,
@@ -39,449 +35,20 @@
     keyword: {},
     callback: true
   },
-  refSerialize: '74d9e70423f9a876f6e536f67e796396'
+  refSerialize: 'c18fd6264c1b64d0454127aedaa3bd70'
 }
 [handleMsg]:  {
   key: {
-    remoteJid: '5493704634534@s.whatsapp.net',
+    remoteJid: '5493704524749@s.whatsapp.net',
     fromMe: false,
-    id: '3EB09C27EBE6716D5E7590',
+    id: '3EB07E3EAD152806241A2F',
     participant: undefined
   },
-  messageTimestamp: 1746151968,
-  pushName: 'Tomas',
+  messageTimestamp: 1746152536,
+  pushName: 'Alan ❄️🦋 // Él',
   broadcast: false,
   message: Message {
-    extendedTextMessage: ExtendedTextMessage {
-      text: '10',
-      contextInfo: [ContextInfo],
-      inviteLinkGroupTypeV2: 0
-    },
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: '10',
-  from: '5493704634534'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5493704634534@s.whatsapp.net',
-    fromMe: false,
-    id: '3EB041AF410DD133C53F2E',
-    participant: undefined
-  },
-  messageTimestamp: 1746151974,
-  pushName: 'Tomas',
-  broadcast: false,
-  message: Message {
-    extendedTextMessage: ExtendedTextMessage {
-      text: '3',
-      contextInfo: [ContextInfo],
-      inviteLinkGroupTypeV2: 0
-    },
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: '3',
-  from: '5493704634534'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5493704634534@s.whatsapp.net',
-    fromMe: false,
-    id: '3EB09421BC9B10724CCB29',
-    participant: undefined
-  },
-  messageTimestamp: 1746151982,
-  pushName: 'Tomas',
-  broadcast: false,
-  message: Message {
-    extendedTextMessage: ExtendedTextMessage {
-      text: '23132',
-      contextInfo: [ContextInfo],
-      inviteLinkGroupTypeV2: 0
-    },
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: '23132',
-  from: '5493704634534'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5493704634534@s.whatsapp.net',
-    fromMe: false,
-    id: '3EB0D10938FA4B5212C06F',
-    participant: undefined
-  },
-  messageTimestamp: 1746151988,
-  pushName: 'Tomas',
-  broadcast: false,
-  message: Message {
-    extendedTextMessage: ExtendedTextMessage {
-      text: '1',
-      contextInfo: [ContextInfo],
-      inviteLinkGroupTypeV2: 0
-    },
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: '1',
-  from: '5493704634534'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5493704634534@s.whatsapp.net',
-    fromMe: false,
-    id: '3EB0573912496929E7C7CE',
-    participant: undefined
-  },
-  messageTimestamp: 1746151994,
-  pushName: 'Tomas',
-  broadcast: false,
-  message: Message {
-    extendedTextMessage: ExtendedTextMessage {
-      text: '2',
-      contextInfo: [ContextInfo],
-      inviteLinkGroupTypeV2: 0
-    },
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: '2',
-  from: '5493704634534'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5493704634534@s.whatsapp.net',
-    fromMe: false,
-    id: '3EB00F06607916ED350DD1',
-    participant: undefined
-  },
-  messageTimestamp: 1746152007,
-  pushName: 'Tomas',
-  broadcast: false,
-  message: Message {
-    extendedTextMessage: ExtendedTextMessage {
-      text: '1',
-      contextInfo: [ContextInfo],
-      inviteLinkGroupTypeV2: 0
-    },
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: '1',
-  from: '5493704634534'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5493704634534@s.whatsapp.net',
-    fromMe: false,
-    id: '3EB0CA9EDF4DC641FE09BE',
-    participant: undefined
-  },
-  messageTimestamp: 1746152011,
-  pushName: 'Tomas',
-  broadcast: false,
-  message: Message {
-    extendedTextMessage: ExtendedTextMessage {
-      text: '32',
-      contextInfo: [ContextInfo],
-      inviteLinkGroupTypeV2: 0
-    },
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: '32',
-  from: '5493704634534'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5493704634534@s.whatsapp.net',
-    fromMe: false,
-    id: '3EB0230AC683E1A7503C33',
-    participant: undefined
-  },
-  messageTimestamp: 1746152017,
-  pushName: 'Tomas',
-  broadcast: false,
-  message: Message {
-    extendedTextMessage: ExtendedTextMessage {
-      text: '1',
-      contextInfo: [ContextInfo],
-      inviteLinkGroupTypeV2: 0
-    },
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: '1',
-  from: '5493704634534'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5493704634534@s.whatsapp.net',
-    fromMe: false,
-    id: '3EB0A61C97212DABB6C967',
-    participant: undefined
-  },
-  messageTimestamp: 1746152020,
-  pushName: 'Tomas',
-  broadcast: false,
-  message: Message {
-    extendedTextMessage: ExtendedTextMessage {
-      text: '2',
-      contextInfo: [ContextInfo],
-      inviteLinkGroupTypeV2: 0
-    },
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: '2',
-  from: '5493704634534'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5493704634534@s.whatsapp.net',
-    fromMe: false,
-    id: '3EB0069805D2BDDC03C640',
-    participant: undefined
-  },
-  messageTimestamp: 1746152024,
-  pushName: 'Tomas',
-  broadcast: false,
-  message: Message {
-    extendedTextMessage: ExtendedTextMessage {
-      text: '3',
-      contextInfo: [ContextInfo],
-      inviteLinkGroupTypeV2: 0
-    },
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: '3',
-  from: '5493704634534'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5493704634534@s.whatsapp.net',
-    fromMe: false,
-    id: '3EB04CB74960A204696CC2',
-    participant: undefined
-  },
-  messageTimestamp: 1746152027,
-  pushName: 'Tomas',
-  broadcast: false,
-  message: Message {
-    extendedTextMessage: ExtendedTextMessage {
-      text: '2332',
-      contextInfo: [ContextInfo],
-      inviteLinkGroupTypeV2: 0
-    },
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: '2332',
-  from: '5493704634534'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5493704634534@s.whatsapp.net',
-    fromMe: false,
-    id: '3EB0F525E7E3B6E063CF3E',
-    participant: undefined
-  },
-  messageTimestamp: 1746152031,
-  pushName: 'Tomas',
-  broadcast: false,
-  message: Message {
-    extendedTextMessage: ExtendedTextMessage {
-      text: '2',
-      contextInfo: [ContextInfo],
-      inviteLinkGroupTypeV2: 0
-    },
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: '2',
-  from: '5493704634534'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5493704634534@s.whatsapp.net',
-    fromMe: false,
-    id: '3EB099A51D09CF277BAD16',
-    participant: undefined
-  },
-  messageTimestamp: 1746152035,
-  pushName: 'Tomas',
-  broadcast: false,
-  message: Message {
-    extendedTextMessage: ExtendedTextMessage {
-      text: '321313',
-      contextInfo: [ContextInfo],
-      inviteLinkGroupTypeV2: 0
-    },
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: '321313',
-  from: '5493704634534'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5493704634534@s.whatsapp.net',
-    fromMe: false,
-    id: '3EB07642BD5DEAE8CB75DB',
-    participant: undefined
-  },
-  messageTimestamp: 1746152038,
-  pushName: 'Tomas',
-  broadcast: false,
-  message: Message {
-    extendedTextMessage: ExtendedTextMessage {
-      text: '12313123',
-      contextInfo: [ContextInfo],
-      inviteLinkGroupTypeV2: 0
-    },
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: '12313123',
-  from: '5493704634534'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5493704634534@s.whatsapp.net',
-    fromMe: false,
-    id: '3EB0B72CD1E3ADB64D26DA',
-    participant: undefined
-  },
-  messageTimestamp: 1746152042,
-  pushName: 'Tomas',
-  broadcast: false,
-  message: Message {
-    extendedTextMessage: ExtendedTextMessage {
-      text: '123123212',
-      contextInfo: [ContextInfo],
-      inviteLinkGroupTypeV2: 0
-    },
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: '123123212',
-  from: '5493704634534'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5493704634534@s.whatsapp.net',
-    fromMe: false,
-    id: '3EB00F4E32D005ED0E04C9',
-    participant: undefined
-  },
-  messageTimestamp: 1746152045,
-  pushName: 'Tomas',
-  broadcast: false,
-  message: Message {
-    extendedTextMessage: ExtendedTextMessage {
-      text: '12312312',
-      contextInfo: [ContextInfo],
-      inviteLinkGroupTypeV2: 0
-    },
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: '12312312',
-  from: '5493704634534'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5493704634534@s.whatsapp.net',
-    fromMe: false,
-    id: '3EB0E5CCA376FA17FFECFF',
-    participant: undefined
-  },
-  messageTimestamp: 1746152071,
-  pushName: 'Tomas',
-  broadcast: false,
-  message: Message {
-    extendedTextMessage: ExtendedTextMessage {
-      text: '2',
-      contextInfo: [ContextInfo],
-      inviteLinkGroupTypeV2: 0
-    },
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: '2',
-  from: '5493704634534'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5493704634534@s.whatsapp.net',
-    fromMe: false,
-    id: '3EB0F3CCFFA63949F245FE',
-    participant: undefined
-  },
-  messageTimestamp: 1746152079,
-  pushName: 'Tomas',
-  broadcast: false,
-  message: Message {
-    extendedTextMessage: ExtendedTextMessage {
-      text: '0',
-      contextInfo: [ContextInfo],
-      inviteLinkGroupTypeV2: 0
-    },
+    conversation: '0',
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2,
@@ -489,171 +56,131 @@
     }
   },
   body: '0',
-  from: '5493704634534'
+  from: '5493704524749'
 }
 [handleMsg]:  {
   key: {
-    remoteJid: '5493704634534@s.whatsapp.net',
+    remoteJid: '5493704524749@s.whatsapp.net',
     fromMe: false,
-    id: '3EB0C0ACCDFA93FE939F2C',
+    id: '3EB001762BB83F666055CE',
     participant: undefined
   },
-  messageTimestamp: 1746152091,
-  pushName: 'Tomas',
+  messageTimestamp: 1746152540,
+  pushName: 'Alan ❄️🦋 // Él',
   broadcast: false,
   message: Message {
-    extendedTextMessage: ExtendedTextMessage {
-      text: 'hola pvto',
-      contextInfo: [ContextInfo],
-      inviteLinkGroupTypeV2: 0
-    },
+    conversation: 'HOLA',
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2,
       messageSecret: [Uint8Array]
     }
   },
-  body: 'hola pvto',
-  from: '5493704634534'
-}
-[QUEUE_SE_ENVIO]:  {
-  ref: 'ans_9413504e-7387-4621-96db-7b0316f1a8b3',
-  keyword: 'key_44ab0862-e9a5-4622-99b4-cc8edc1eef23',
-  answer: '__call_action__',
-  options: {
-    media: null,
-    buttons: [],
-    capture: false,
-    child: null,
-    delay: 0,
-    idle: null,
-    ref: null,
-    nested: [],
-    keyword: {},
-    callback: true
-  },
-  refSerialize: '581123fcf7c597ee6ccd04427bd98a53'
-}
-[QUEUE_SE_ENVIO]:  {
-  ref: 'ans_89d4844b-fb3d-4245-8806-0cf65fd8455e',
-  keyword: 'ans_9413504e-7387-4621-96db-7b0316f1a8b3',
-  answer: '¿Qué te gustaría ordenar hoy? 🤔',
-  options: {
-    media: null,
-    buttons: [],
-    capture: false,
-    child: null,
-    delay: 0,
-    idle: null,
-    ref: null,
-    nested: [],
-    keyword: {},
-    callback: false
-  },
-  refSerialize: '18c3bf1a1c1273fd95f590c75f5b35a6'
-}
-[QUEUE_SE_ENVIO]:  {
-  ref: 'ans_abdfddce-ba55-4948-b532-7fccc8571379',
-  keyword: 'ans_89d4844b-fb3d-4245-8806-0cf65fd8455e',
-  answer: '1️⃣ Pernil\n' +
-    '2️⃣ Pata de ternera / Paleta / Peceto/Vitel Toné\n' +
-    '3️⃣ Bondiola\n' +
-    '4️⃣ Salsas\n' +
-    '5️⃣ Combo Pernil + Minutas\n' +
-    '6️⃣ Combo Ternera + Minutas\n' +
-    '7️⃣ Solo Minutas\n' +
-    '8️⃣ Box de Chips y Combo EXPRESS\n' +
-    '9️⃣ Menú Kids\n' +
-    '🔟 Panadería\n' +
-    '0️⃣ Consultar con el chef\n' +
-    '\n' +
-    'Por favor, seleccione el numero de lo que quiera solicitar. 😊',
-  options: {
-    media: null,
-    buttons: [],
-    capture: true,
-    child: null,
-    delay: 0,
-    idle: null,
-    ref: null,
-    nested: [],
-    keyword: {},
-    callback: true
-  },
-  refSerialize: 'fc7033fbea6a497c7f1cb5f4b67b08ee'
+  body: 'HOLA',
+  from: '5493704524749'
 }
 [handleMsg]:  {
   key: {
-    remoteJid: '5493704634534@s.whatsapp.net',
+    remoteJid: '5493704524749@s.whatsapp.net',
     fromMe: false,
-    id: '3EB04120BDEEBCD2D71925',
+    id: '3EB049AC9289A9654582D7',
     participant: undefined
   },
-  messageTimestamp: 1746152095,
-  pushName: 'Tomas',
+  messageTimestamp: 1746152542,
+  pushName: 'Alan ❄️🦋 // Él',
   broadcast: false,
   message: Message {
-    extendedTextMessage: ExtendedTextMessage {
-      text: 'a',
-      contextInfo: [ContextInfo],
-      inviteLinkGroupTypeV2: 0
-    },
+    conversation: 'hola',
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2,
       messageSecret: [Uint8Array]
     }
   },
-  body: 'a',
-  from: '5493704634534'
+  body: 'hola',
+  from: '5493704524749'
 }
 [handleMsg]:  {
   key: {
-    remoteJid: '5493704634534@s.whatsapp.net',
+    remoteJid: '5493704524749@s.whatsapp.net',
     fromMe: false,
-    id: '3EB067F3E8E4531BC73133',
+    id: '3EB08FFDE01F3D565F7216',
     participant: undefined
   },
-  messageTimestamp: 1746152194,
-  pushName: 'Tomas',
+  messageTimestamp: 1746152544,
+  pushName: 'Alan ❄️🦋 // Él',
   broadcast: false,
   message: Message {
-    extendedTextMessage: ExtendedTextMessage {
-      text: 'JAJAJAJA',
-      contextInfo: [ContextInfo],
-      inviteLinkGroupTypeV2: 0
-    },
+    conversation: 'alo',
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2,
       messageSecret: [Uint8Array]
     }
   },
-  body: 'JAJAJAJA',
-  from: '5493704634534'
+  body: 'alo',
+  from: '5493704524749'
 }
 [handleMsg]:  {
   key: {
-    remoteJid: '5493704634534@s.whatsapp.net',
+    remoteJid: '5493704524749@s.whatsapp.net',
     fromMe: false,
-    id: '3EB077FECFD18992A29AFA',
+    id: '3EB00052804D823DB2401F',
     participant: undefined
   },
-  messageTimestamp: 1746152195,
-  pushName: 'Tomas',
+  messageTimestamp: 1746152545,
+  pushName: 'Alan ❄️🦋 // Él',
   broadcast: false,
   message: Message {
-    extendedTextMessage: ExtendedTextMessage {
-      text: 'lpm',
-      contextInfo: [ContextInfo],
-      inviteLinkGroupTypeV2: 0
-    },
+    conversation: 'menu',
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2,
       messageSecret: [Uint8Array]
     }
   },
-  body: 'lpm',
-  from: '5493704634534'
+  body: 'menu',
+  from: '5493704524749'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704524749@s.whatsapp.net',
+    fromMe: false,
+    id: '3EB038AD4194DE1A6B7650',
+    participant: undefined
+  },
+  messageTimestamp: 1746152547,
+  pushName: 'Alan ❄️🦋 // Él',
+  broadcast: false,
+  message: Message {
+    conversation: 'inicio',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'inicio',
+  from: '5493704524749'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704524749@s.whatsapp.net',
+    fromMe: false,
+    id: '3EB091C08AEF9D74DD1BA4',
+    participant: undefined
+  },
+  messageTimestamp: 1746152551,
+  pushName: 'Alan ❄️🦋 // Él',
+  broadcast: false,
+  message: Message {
+    conversation: 'angelica perniles',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'angelica perniles',
+  from: '5493704524749'
 }
