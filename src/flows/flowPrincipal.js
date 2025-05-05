@@ -21,7 +21,7 @@ const flowConsulta = require("./flowConsulta");
 // Lista de opciones para mostrar al usuario (actualizada)
 const opcionesMenu = [
   "1️⃣ Pernil",
-  "2️⃣ Pata de ternera / (borrar paleta) / Peceto/Vitel Toné", // Era 3
+  "2️⃣ Pata de ternera / Peceto/Vitel Toné", // Era 3
   "3️⃣ Bondiola", // Era 4
   "4️⃣ Salsas", // Era 5
   "5️⃣ Combo Pernil + Minutas", // Era 6
@@ -40,7 +40,7 @@ const mensajeError = [
   "❌ *Opción no válida.* Por favor selecciona:",
   "",
   "1️⃣ Pernil",
-  "2️⃣ Pata de ternera / (borrar paleta) / Peceto",
+  "2️⃣ Pata de ternera / Peceto",
   "3️⃣ Bondiola",
   "4️⃣ Salsas",
   "5️⃣ Combo Pernil + Minutas",
@@ -72,9 +72,9 @@ const flowPrincipal = addKeyword(EVENTS.ACTION)
       }
       if (respuesta === "2") {
         // Era 3
-        pedidoActual.tipo = "Ternera / (borrar paleta) / Peceto";
+        pedidoActual.tipo = "Ternera  / Peceto";
         await flowDynamic(
-          "➡️ Has seleccionado *Ternera / (borrar paleta) / Peceto*"
+          "➡️ Has seleccionado *Ternera / Peceto*"
         );
         return gotoFlow(flowTernera);
       }
