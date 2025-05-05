@@ -21,7 +21,7 @@ const flowConsulta = require("./flowConsulta");
 // Lista de opciones para mostrar al usuario (actualizada)
 const opcionesMenu = [
   "1️⃣ Pernil",
-  "2️⃣ Pata de ternera / Peceto/Vitel Toné", // Era 3
+  "2️⃣ Pata de ternera / (borrar paleta) / Peceto/Vitel Toné", // Era 3
   "3️⃣ Bondiola", // Era 4
   "4️⃣ Salsas", // Era 5
   "5️⃣ Combo Pernil + Minutas", // Era 6
@@ -40,7 +40,7 @@ const mensajeError = [
   "❌ *Opción no válida.* Por favor selecciona:",
   "",
   "1️⃣ Pernil",
-  "2️⃣ Pata de ternera / Peceto",
+  "2️⃣ Pata de ternera / (borrar paleta) / Peceto",
   "3️⃣ Bondiola",
   "4️⃣ Salsas",
   "5️⃣ Combo Pernil + Minutas",
@@ -53,13 +53,6 @@ const mensajeError = [
 ].join("\n");
 
 const flowPrincipal = addKeyword(EVENTS.ACTION)
-  // 1) Mensaje de bienvenida (sin resetear pedido aquí, usualmente se hace al inicio del bot o al finalizar)
-  .addAction(async (_, { flowDynamic }) => {
-    await flowDynamic(
-      "👋 ¡Bienvenido a *Angélica Perniles*!\n" +
-        "Recuerda que los pedidos deben hacerse con al menos *una semana de anticipación*.\n"
-    );
-  })
   // 2) Pregunta qué quiere hacer
   .addAnswer("¿Qué te gustaría ordenar hoy? 🤔")
   // 3) Muestra opciones (actualizadas) y captura
@@ -79,8 +72,10 @@ const flowPrincipal = addKeyword(EVENTS.ACTION)
       }
       if (respuesta === "2") {
         // Era 3
-        pedidoActual.tipo = "Ternera / Paleta / Peceto";
-        await flowDynamic("➡️ Has seleccionado *Ternera / Paleta / Peceto*");
+        pedidoActual.tipo = "Ternera / (borrar paleta) / Peceto";
+        await flowDynamic(
+          "➡️ Has seleccionado *Ternera / (borrar paleta) / Peceto*"
+        );
         return gotoFlow(flowTernera);
       }
       if (respuesta === "3") {
