@@ -21,7 +21,7 @@ const flowConsulta = require("./flowConsulta");
 // Lista de opciones para mostrar al usuario (actualizada)
 const opcionesMenu = [
   "1️⃣ Pernil",
-  "2️⃣ Pata de ternera / Paleta / Peceto/Vitel Toné", // Era 3
+  "2️⃣ Pata de ternera / Peceto/Vitel Toné", // Era 3
   "3️⃣ Bondiola", // Era 4
   "4️⃣ Salsas", // Era 5
   "5️⃣ Combo Pernil + Minutas", // Era 6
@@ -40,7 +40,7 @@ const mensajeError = [
   "❌ *Opción no válida.* Por favor selecciona:",
   "",
   "1️⃣ Pernil",
-  "2️⃣ Pata de ternera / Paleta / Peceto",
+  "2️⃣ Pata de ternera / Peceto",
   "3️⃣ Bondiola",
   "4️⃣ Salsas",
   "5️⃣ Combo Pernil + Minutas",
