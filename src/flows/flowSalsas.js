@@ -33,7 +33,7 @@ const mensajeVariedades = [
 const mensajeTamaños = [
   "📏 *Elige el tamaño*",
   "",
-  "1️⃣ Chica — $5.500",
+  "1️⃣ Chica — $6.500",
   "2️⃣ Grande — $7.500",
   "",
   "0️⃣ Cancelar y volver al menú principal",

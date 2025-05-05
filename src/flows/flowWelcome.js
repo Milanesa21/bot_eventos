@@ -4,7 +4,8 @@ const { addKeyword, EVENTS } = require("@bot-whatsapp/bot");
 const flowPrincipal = require("./flowPrincipal");
 
 const flowWelcome = addKeyword(EVENTS.WELCOME).addAnswer(
-  "👋 ¡Hola! Bienvenido a *Angélica Perniles*",
+  "👋 ¡Bienvenido a Angélica Perniles!\n" +
+    "Recuerda que los pedidos deben hacerse con al menos una semana de anticipación ademàs de una seña del 50%.\n",
   null, // No necesitamos capturar respuesta aquí
   async (_, { gotoFlow, flowDynamic }) => {
     // El saludo ya se envió con el addAnswer.

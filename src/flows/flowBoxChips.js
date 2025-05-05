@@ -7,8 +7,8 @@ const flowBoxChips = addKeyword(EVENTS.ACTION).addAnswer(
   [
     "📦 *Box de Chips & Combo EXPRESS*",
     "",
-    "1️⃣ Box de Chips (40 u) - Mix a coordinar (Precio a consultar)",
-    "2️⃣ Combo EXPRESS - 10 pollo + 10 jamón/queso (~$80.000)",
+    "1️⃣ Box de Chips Jamoneros (40 u) - Mix a coordinar (~$52.000)",
+    "2️⃣ Combo EXPRESS - 40 chips variados y 15 pizzetas (~$80.000)",
     "0️⃣ Cancelar",
     "",
     "Responde con el número de tu elección.",
@@ -28,7 +28,7 @@ const flowBoxChips = addKeyword(EVENTS.ACTION).addAnswer(
         selectedItemData = {
           category: "Box Chips",
           item: "Box de Chips (40 u)",
-          price: 0,
+          price: 52000,
           incluye: "Mix a coordinar",
         };
         break;
