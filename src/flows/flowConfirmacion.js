@@ -1,117 +1,114 @@
 // flows/flowConfirmacion.js
 const { addKeyword, EVENTS } = require("@bot-whatsapp/bot");
-const { pedidoActual, resetPedido } = require("../utils/resetPedido");
+const { getPedidoActual, resetPedido } = require("../utils/resetPedido");
 const flowPrincipal = require("./flowPrincipal");
-const flowPago = require("./flowPago")
+const flowPago = require("./flowPago");
 
 const flowConfirmacion = addKeyword(EVENTS.ACTION)
-  // 1) Acción para CONSTRUIR y ENVIAR el resumen del pedido
   .addAction(async (_, { flowDynamic, state }) => {
+    const pedidoActual = getPedidoActual(state);
     const resumenAgrupado = {};
 
     if (!pedidoActual.cart || pedidoActual.cart.length === 0) {
       await flowDynamic(
-        "🛒 Tu carrito está vacío. Escribe 'menu' para empezar a ordenar."
+        "🛒 Tu carrito está vacío. Escribe 'menu' para empezar."
       );
-      return; // Detiene esta acción si el carrito está vacío
+      return;
     }
 
+    // Agrupar items
     pedidoActual.cart.forEach((item) => {
       const itemKey = item.item;
-      if (resumenAgrupado[itemKey]) {
-        resumenAgrupado[itemKey].quantity++;
-      } else {
-        resumenAgrupado[itemKey] = { ...item, quantity: 1 };
-      }
+      resumenAgrupado[itemKey] = resumenAgrupado[itemKey] || {
+        ...item,
+        quantity: 0,
+      };
+      resumenAgrupado[itemKey].quantity++;
     });
 
     const lines = ["📝 *Resumen de tu pedido:*", ""];
 
-    Object.values(resumenAgrupado).forEach((groupedItem) => {
+    // Construir líneas del resumen
+    Object.values(resumenAgrupado).forEach((item) => {
       lines.push(
-        `${groupedItem.quantity}x ${groupedItem.item} (${
-          groupedItem.category
-        }) — $${(groupedItem.price * groupedItem.quantity).toLocaleString(
-          "es-AR"
-        )}`
+        `${item.quantity}x ${item.item} (${item.category}) — $${(
+          item.price * item.quantity
+        ).toLocaleString("es-AR")}`
       );
     });
 
-    const subtotal = pedidoActual.cart.reduce((s, i) => s + i.price, 0);
-    const seguro = 7000; // Revisa este valor
+    // Cálculos financieros
+    const subtotal = pedidoActual.cart.reduce(
+      (acc, item) => acc + item.price,
+      0
+    );
+    const seguro = 7000;
     const total = subtotal + seguro;
-
-    // --- NUEVO: Cálculo del adelanto ---
     const adelanto = total * 0.5;
-    // --- FIN NUEVO ---
 
+    // Sección de datos del cliente
+    const customerData = pedidoActual.customerData || {};
     lines.push(
       "",
       `*Subtotal Productos: $${subtotal.toLocaleString("es-AR")}*`,
       `🔒 Seguro de tabla: $${seguro.toLocaleString("es-AR")}`,
       `💰 *Total Final:* $${total.toLocaleString("es-AR")}`,
       "",
-      // --- NUEVO: Sección Condiciones de Pago ---
-      "---", // Separador
+      "---",
       "💳 *Condiciones de Pago:*",
-      `Se requiere abonar el 50% del total como adelanto para confirmar la reserva.`,
-      `Monto del adelanto (50%): *$${adelanto.toLocaleString("es-AR")}*`,
-      `Este monto debe ser abonado con *al menos una semana de anticipación* a la fecha del evento.`,
-      "---", // Separador
-      // --- FIN NUEVO ---
-      "",
-      "👤 *Tus Datos*",
-      `👤 Nombre: ${pedidoActual.customerData?.name || "No especificado"}`,
-      `📞 Tel: ${pedidoActual.customerData?.phone || "No especificado"}`,
-      `📅 Fecha Evento: ${
-        pedidoActual.customerData?.date || "No especificado"
-      }`,
-      `🏠 Dirección Entrega: ${
-        pedidoActual.customerData?.address || "No especificado"
-      }`,
-      pedidoActual.customerData?.comments
-        ? `🗒️ Comentarios: ${pedidoActual.customerData.comments}`
-        : "",
+      `Adelanto requerido (50%): *$${adelanto.toLocaleString("es-AR")}*`,
+      "Debe ser abonado con al menos 7 días de anticipación",
       "---",
       "",
-      "¿Confirmas este pedido y las condiciones?", // Ajustamos la pregunta
+      "👤 *Tus Datos*",
+      `📞 Tel: ${customerData.phone || "No especificado"}`,
+      `📅 Fecha: ${customerData.date || "No especificado"}`,
+      `🏠 Dirección: ${customerData.address || "No especificado"}`,
+      customerData.comments ? `🗒️ Comentarios: ${customerData.comments}` : "",
+      "---",
+      "",
+      "¿Confirmas este pedido y las condiciones?",
       "1️⃣ Sí, confirmar pedido",
       "2️⃣ No, cancelar pedido"
     );
 
     await flowDynamic(lines.filter(Boolean).join("\n"));
-  }) // Fin de addAction
-
-  // 2) addAnswer para capturar la confirmación (Sí/No) - Sin cambios aquí
+  })
   .addAnswer(
     "Responde 1️⃣ para confirmar o 2️⃣ para cancelar",
     { capture: true },
-    async (ctx, { flowDynamic, gotoFlow, endFlow, fallBack }) => {
+    async (ctx, { flowDynamic, gotoFlow, fallBack, state }) => {
       const resp = ctx.body.trim().toLowerCase();
 
       if (resp === "1" || resp.includes("sí") || resp.includes("si")) {
         await flowDynamic(
-          "✅ *¡Pedido confirmado!* ✅\n\n" +
-            "Gracias por confiar en *Angélica Perniles*.\n" +
-            "A continuación, elige tu método de pago."
+          [
+            "✅ *¡Pedido confirmado!*",
+            "Gracias por confiar en *Angélica Perniles*",
+            "Elige tu método de pago:",
+          ].join("\n")
         );
-        // Redirigimos al flujo de pago
-        resetPedido();
+
+        resetPedido(state); // Limpiamos solo ESTE pedido
         return gotoFlow(flowPago);
       }
 
       if (resp === "2" || resp.includes("no")) {
         await flowDynamic(
-          "❌ *Pedido cancelado* ❌\n\n" +
-            'Tu pedido ha sido cancelado.'
+          [
+            "❌ *Pedido cancelado*",
+            "Todos los datos han sido eliminados",
+            "Puedes comenzar de nuevo cuando quieras",
+          ].join("\n")
         );
-        resetPedido();
-        return gotoFlow(flowPrincipal)
+
+        resetPedido(state);
+        return gotoFlow(flowPrincipal);
       }
 
-      await flowDynamic("❌ No entendí. Por favor responde 1️⃣ (Sí) o 2️⃣ (No).");
+      await flowDynamic("❌ Respuesta no válida. Por favor elige 1️⃣ o 2️⃣");
       return fallBack();
     }
-  ); // Fin de addAnswer
+  );
 
 module.exports = flowConfirmacion;
