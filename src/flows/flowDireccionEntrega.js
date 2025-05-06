@@ -4,15 +4,9 @@ const { getPedidoActual, resetPedido } = require("../utils/resetPedido");
 
 const flowDireccionEntrega = addKeyword(EVENTS.ACTION).addAnswer(
   [
-    "🏠 *Ingresa la dirección completa de entrega:*",
-    "Debe incluir:",
-    "→ Barrio",
-    "→ Calle/Avenida",
-    "→ Número de casa/edificio",
-    "→ *Cada parte de la direccion escrita debe estar separada por comas*",
-    "",
-    "Ejemplo válido:",
-    "`Caballito, Av. Rivadavia 4567, Departamento 3`",
+    "🏠 *Ingresa la dirección donde deseas recibir tu pedido:*",
+    "Puedes escribirla en el formato que prefieras",
+    "Ejemplo: 'Calle Principal 123, Barrio Centro, Ciudad'",
     "",
     "0️⃣ Escribe '0' para cancelar el pedido",
   ].join("\n"),
@@ -27,28 +21,7 @@ const flowDireccionEntrega = addKeyword(EVENTS.ACTION).addAnswer(
       return gotoFlow(require("./flowPrincipal"));
     }
 
-    // Validar dirección
-    const partes = input.split(",").map((p) => p.trim());
-    const tieneNumero = /\d/.test(input);
-
-    if (partes.length < 3 || !tieneNumero) {
-      await flowDynamic(
-        [
-          "❌ Dirección incompleta!",
-          "Debe contener:",
-          "1. Barrio/Localidad",
-          "2. Calle/Avenida",
-          "3. Número y detalles",
-          "4. La direccion escrita debe estar separada por comas",
-          "",
-          "Ejemplo válido:",
-          "`Caballito, Av. Rivadavia 4567, Departamento 3`",
-        ].join("\n")
-      );
-      return fallBack();
-    }
-
-    // Actualizar estado
+    // Actualizar estado sin validaciones
     const pedidoActual = getPedidoActual(state);
     const newCustomerData = {
       ...pedidoActual.customerData,
@@ -62,13 +35,13 @@ const flowDireccionEntrega = addKeyword(EVENTS.ACTION).addAnswer(
       },
     });
 
-    // Mostrar confirmación
+    // Confirmación simple
     await flowDynamic(
       [
         "✅ Dirección guardada:",
-        `📍 *Barrio:* ${partes[0]}`,
-        `🛣️ *Calle:* ${partes[1]}`,
-        `🏡 *Número/Detalles:* ${partes.slice(2).join(", ")}`,
+        `📍 ${input}`,
+        "",
+        "Continuamos con los comentarios adicionales...",
       ].join("\n")
     );
 

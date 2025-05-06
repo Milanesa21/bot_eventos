@@ -1,7 +1,7 @@
 // flows/flowBondiola.js
 const { addKeyword, EVENTS } = require("@bot-whatsapp/bot");
-// Importamos el flujo genérico de cantidad
 const flowCantidad = require("./flowCantidad");
+const flowFileteado = require("./flowFileteado");
 
 const flowBondiola = addKeyword(EVENTS.ACTION).addAnswer(
   [
@@ -18,47 +18,45 @@ const flowBondiola = addKeyword(EVENTS.ACTION).addAnswer(
   async (ctx, { state, flowDynamic, fallBack, gotoFlow }) => {
     const opt = ctx.body.trim();
 
-    // Cancelar y volver al menú principal
     if (opt === "0") {
+      await flowDynamic("❌ Pedido cancelado");
       return gotoFlow(require("./flowPrincipal"));
     }
 
-    let selectedItemData;
     switch (opt) {
       case "1":
-        selectedItemData = {
-          category: "Bondiola",
-          item: "Bondiola fileteada (10 pers)",
-          price: 85000,
-          incluye: "60 panes + 3 salsas",
-        };
-        break;
+        await state.update({
+          baseItem: "Bondiola fileteada (10 pers)",
+          basePrice: 85000,
+          baseIncluye: "60 panes + 3 salsas",
+          category: "Bondiola", // Añadir categoría
+        });
+        return gotoFlow(flowFileteado);
+
       case "2":
-        selectedItemData = {
-          category: "Bondiola",
-          item: "Bondiola fileteada (5 pers)",
-          price: 45000,
-          incluye: "30 panes + 1 salsa",
-        };
-        break;
+        await state.update({
+          baseItem: "Bondiola fileteada (5 pers)",
+          basePrice: 45000,
+          baseIncluye: "30 panes + 1 salsa",
+          category: "Bondiola", // Añadir categoría
+        });
+        return gotoFlow(require("./flowFileteado"));
+
       case "3":
-        selectedItemData = {
-          category: "Bondiola",
-          item: "Bondiola braseada (10 pers)",
-          price: 95000,
-          incluye: "2 salsas + pancitos",
-        };
-        break;
+        await state.update({
+          itemParaCantidad: {
+            category: "Bondiola",
+            item: "Bondiola braseada (10 pers)",
+            price: 95000,
+            incluye: "2 salsas + pancitos",
+          },
+        });
+        return gotoFlow(require("./flowFileteado"));
+
       default:
         await flowDynamic("❌ Opción no válida. Por favor responde 1-3 o 0.");
-        return fallBack(); // vuelve a preguntar la opción
+        return fallBack();
     }
-
-    // Guardamos el ítem seleccionado en el estado para usarlo en flowCantidad
-    await state.update({ itemParaCantidad: selectedItemData });
-
-    // Redirigimos al flujo que pregunta la cantidad
-    return gotoFlow(flowCantidad);
   }
 );
 

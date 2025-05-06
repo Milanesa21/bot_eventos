@@ -1,10 +1,8 @@
-// flows/flowPernil.js - Versión modificada para usar el nuevo flowFileteado
+// flows/flowPernil.js
 const { addKeyword, EVENTS } = require("@bot-whatsapp/bot");
-
-// Importa los flujos necesarios
 const flowPrincipal = require("./flowPrincipal");
 const flowCantidad = require("./flowCantidad");
-const flowFileteado = require("./flowFileteado"); // Nuevo flujo de fileteado
+const flowFileteado = require("./flowFileteado");
 
 const flowPernil = addKeyword(EVENTS.ACTION).addAnswer(
   [
@@ -19,11 +17,11 @@ const flowPernil = addKeyword(EVENTS.ACTION).addAnswer(
   ].join("\n"),
   { capture: true },
   async (ctx, { state, flowDynamic, gotoFlow, fallBack }) => {
-
     const opt = ctx.body.trim();
 
+    // Manejar cancelación
     if (opt === "0") {
-  
+      await flowDynamic("❌ Pedido cancelado");
       return gotoFlow(flowPrincipal);
     }
 
@@ -31,38 +29,53 @@ const flowPernil = addKeyword(EVENTS.ACTION).addAnswer(
 
     switch (opt) {
       case "1":
-     
         baseItem = "Pernil Chico (20 pers)";
         basePrice = 138000;
         baseIncluye = "120 panes + 4 salsas";
         break;
+
       case "2":
-      
-        baseItem = "Pernil Grande (30 pers)";
-        basePrice = 158000;
-        baseIncluye = "160 panes + 6 salsas";
+         await state.update({
+        category: "Pernil",
+        baseItem:  "Pernil Grande (30 pers)",
+        basePrice: 158000,
+        baseIncluye: "160 panes + 6 salsas",
+     });
+        return gotoFlow(require("./flowFileteado"));
 
-        // Guarda información en el estado y va al flujo de fileteado
-        await state.update({ baseItem, basePrice, baseIncluye });
-
-        await flowDynamic(`Has seleccionado *${baseItem}*.`);
-      
-        return gotoFlow(flowFileteado);
 
       case "3":
-
         baseItem = "Pernil Extra Grande (40 pers)";
         basePrice = 179000;
         baseIncluye = "200 panes + 6 salsas grandes";
         break;
-      default:
 
+      default:
         await flowDynamic("❌ Opción no válida. Por favor responde 1-3 o 0.");
         return fallBack();
     }
 
-    // Para los casos que NO requieren fileteado (opciones 1 y 3)
-    // Preparamos el item para el flujo de cantidad
+    // Lógica específica para Pernil Grande (con fileteado opcional)
+    if (opt === "2") {
+      await state.update({
+        baseItem,
+        basePrice,
+        baseIncluye,
+        category: "Pernil", // Nueva propiedad para tracking
+      });
+
+      await flowDynamic(
+        [
+          `✅ Selección base: *${baseItem}*`,
+          `📦 Incluye: ${baseIncluye}`,
+          `💵 Precio base: $${basePrice.toLocaleString("es-AR")}`,
+        ].join("\n")
+      );
+
+      return gotoFlow(flowFileteado);
+    }
+
+    // Lógica para opciones sin fileteado (1 y 3)
     await state.update({
       itemParaCantidad: {
         category: "Pernil",
@@ -72,8 +85,14 @@ const flowPernil = addKeyword(EVENTS.ACTION).addAnswer(
       },
     });
 
-    await flowDynamic(`✅ Perfecto, has seleccionado *${baseItem}*.`);
-   
+    await flowDynamic(
+      [
+        `✅ Selección confirmada: *${baseItem}*`,
+        `📦 Incluye: ${baseIncluye}`,
+        `💵 Precio: $${basePrice.toLocaleString("es-AR")}`,
+      ].join("\n")
+    );
+
     return gotoFlow(flowCantidad);
   }
 );

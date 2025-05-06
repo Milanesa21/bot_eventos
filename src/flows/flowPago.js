@@ -2,21 +2,19 @@
 const { addKeyword, EVENTS } = require("@bot-whatsapp/bot");
 
 const flowPago = addKeyword(EVENTS.ACTION)
-  // 1) Mostrar métodos de pago
   .addAction(async (_, { flowDynamic }) => {
     const lines = [
       "💳 *Métodos de Pago Disponibles:*",
       "",
       "1️⃣ Transferencia Bancaria",
-      "2️⃣ (Opción futura: Mercado Pago)",
+      "2️⃣ Pagos en efectivo",
       "",
       "Por favor, selecciona una opción (solo ingresa el número):",
     ];
     await flowDynamic(lines.join("\n"));
   })
-  // 2) Capturar la selección del cliente
   .addAnswer(
-    { patterns: ["1", "2", "3"] },
+    { patterns: ["1", "2"] },
     { capture: true },
     async (ctx, { flowDynamic, endFlow, fallBack }) => {
       const choice = ctx.body.trim();
@@ -31,18 +29,26 @@ const flowPago = addKeyword(EVENTS.ACTION)
           "Alias: ANGELICAPERNILES3\n" +
           "CBU: 0110262030026237014329\n";
       } else if (choice === "2") {
-        detalle = "📲 *Mercado Pago*\n(link o instrucciones aquí)";
+        detalle =
+          "💰 *Pago en Efectivo*\n" +
+          "Nuestro chef se pondrá en contacto contigo para coordinar:\n" +
+          "→ Lugar y hora de pago\n" +
+          "→ Entrega del efectivo\n" +
+          "→ Recibo correspondiente";
       } else {
-        await flowDynamic("❌ No entendí tu selección.");
+        await flowDynamic("❌ Opción no válida. Por favor selecciona 1 o 2.");
         return fallBack();
       }
 
       await flowDynamic(
-        `👍 *Has seleccionado la opción ${choice}*\n\n` +
-          detalle +
-          "\nMuchas gracias por tu preferencia. Estaremos esperando tu pago para empezar a trabajar en tu pedido."
+        [
+          `✅ Gracias por seleccionar la opción ${choice}`,
+          detalle,
+          "",
+          "¡Tu pedido está siendo procesado!",
+          "Muchas gracias por confiar en *Angélica Perniles* 🐷",
+        ].join("\n")
       );
-      return 
     }
   );
 

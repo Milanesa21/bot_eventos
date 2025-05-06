@@ -17,7 +17,7 @@ const flowSoloMinutas = require("./flows/flowSoloMinutas");
 const flowBoxChips = require("./flows/flowBoxChips");
 const flowMenuKids = require("./flows/flowMenuKids");
 const flowPanaderia = require("./flows/flowPanaderia");
-const flowDatosCliente = require("./flows/flowDatosCliente");
+const flowNombreCliente = require("./flows/flowDatosCliente");
 const flowConfirmacion = require("./flows/flowConfirmacion");
 const flowConsulta = require("./flows/flowConsulta");
 const flowWelcome = require("./flows/flowWelcome")
@@ -27,6 +27,8 @@ const flowComentarios = require("./flows/flowComentarios");
 const flowCantidad = require("./flows/flowCantidad")
 const flowPago = require("./flows/flowPago")
 const flowFileteado = require("./flows/flowFileteado")
+const flowDatosCliente = require("./flows/flowTelefonoCliente")
+const flowHorarioEvento = require("./flows/flowHorarioEvento")
 
 
 async function main() {
@@ -48,6 +50,7 @@ async function main() {
     flowMenuKids,
     flowPanaderia,
     flowDatosCliente,
+    flowNombreCliente,
     flowConfirmacion,
     flowConsulta,
     flowWelcome,
@@ -57,6 +60,7 @@ async function main() {
     flowCantidad,
     flowPago,
     flowFileteado,
+    flowHorarioEvento,
   ]);
 
   // Proveedor de WhatsApp

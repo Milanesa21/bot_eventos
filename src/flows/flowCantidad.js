@@ -13,7 +13,7 @@ const flowCantidad = addKeyword(EVENTS.ACTION)
   })
   .addAnswer(
     [
-      "🔢 ¿Cuántas unidades deseas agregar?",
+      "🔢 ¿Cuántas unidades de su pedido desea agregar?",
       "→ Máximo permitido: 100 unidades",
       "→ Solo números enteros positivos",
       "→ Ejemplos: 1, 5, 10",

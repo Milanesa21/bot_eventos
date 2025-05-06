@@ -1,73 +1,100 @@
-// flows/flowFileteado.js
 const { addKeyword, EVENTS } = require("@bot-whatsapp/bot");
-const flowCantidad = require("./flowCantidad");
-const flowPrincipal = require("./flowPrincipal");
+const { getPedidoActual } = require("../utils/resetPedido");
 
-/**
- * Este flujo maneja exclusivamente la lógica para preguntar al usuario
- * si desea agregar fileteado a su pernil grande y procesar su respuesta.
- */
+// Importante: cambiamos las importaciones para evitar problemas de dependencia circular
+// No importamos flowCantidad aquí sino que lo requerimos cuando sea necesario
+// No importamos flowPrincipal aquí sino que lo requerimos cuando sea necesario
+
 const flowFileteado = addKeyword(EVENTS.ACTION).addAnswer(
-  ["¿Deseas fileteado por +$10.000?", "1️⃣ Sí", "2️⃣ No", "0️⃣ Cancelar"].join(
-    "\n"
-  ),
+  [
+    "¿Deseas agregar servicio de fileteado por +$10.000?",
+    "1️⃣ Sí",
+    "2️⃣ No",
+    "0️⃣ Cancelar pedido",
+    "",
+    "Responde con el número de tu elección.",
+  ].join("\n"),
   { capture: true },
   async (ctx, { state, flowDynamic, gotoFlow, fallBack }) => {
-    const resp = ctx.body.trim();
-    
-    // Opción para cancelar y volver al menú principal
-    if (resp === "0") {
-      return gotoFlow(flowPrincipal);
-    }
+    try {
+      const resp = ctx.body.trim();
+      const currentState = await state.getMyState();
+      const pedidoActual = await getPedidoActual(state);
 
-    // Validar que la respuesta sea 1 o 2
-    if (resp !== "1" && resp !== "2") {
-      await flowDynamic("❌ Opción no válida. Por favor responde 1, 2 o 0.");
-      return fallBack();
-    }
+      if (!currentState?.baseItem || !currentState?.basePrice) {
+        await flowDynamic(
+          "⚠️ Error en la selección. Volviendo al menú principal..."
+        );
+        return gotoFlow(require("./flowPrincipal"));
+      }
 
-    // Recuperar los datos del pernil grande del estado
-    const currentState = await state.getMyState();
+      if (resp === "0") {
+        await state.update({
+          baseItem: null,
+          basePrice: null,
+          baseIncluye: null,
+        });
+        await flowDynamic("❌ Pedido cancelado correctamente");
+        return gotoFlow(require("./flowPrincipal"));
+      }
 
+      if (!["1", "2"].includes(resp)) {
+        await flowDynamic(
+          [
+            "❌ Respuesta no válida",
+            "Por favor selecciona:",
+            "1️⃣ Sí - Agregar fileteado (+$10.000)",
+            "2️⃣ No - Continuar sin fileteado",
+            "0️⃣ Cancelar pedido",
+          ].join("\n")
+        );
+        return fallBack();
+      }
 
-    // Verificar que tengamos la información necesaria
-    if (!currentState || !currentState.baseItem) {
+      let finalItem = currentState.baseItem;
+      let finalPrice = currentState.basePrice;
+      let finalIncluye = currentState.baseIncluye || "";
+
+      if (resp === "1") {
+        finalItem += " con fileteado";
+        finalPrice += 10000;
+        finalIncluye += finalIncluye
+          ? " + Servicio profesional de fileteado"
+          : "Servicio profesional de fileteado";
+      }
+
+      // Actualizamos el estado con la información del item seleccionado
+      await state.update({
+        itemParaCantidad: {
+          category: currentState.category || "Ternera/Peceto",
+          item: finalItem,
+          price: finalPrice,
+          incluye: finalIncluye.trim() || null,
+        },
+        // Limpiamos los datos temporales
+        baseItem: null,
+        basePrice: null,
+        baseIncluye: null,
+      });
+
       await flowDynamic(
-        "⚠️ Hubo un problema con tu selección. Volviendo al menú principal."
+        [
+          "✅ Configuración final:",
+          `🍖 Producto: ${finalItem}`,
+          `📦 Incluye: ${finalIncluye || "Producto base"}`,
+          `💵 Precio final: $${finalPrice.toLocaleString("es-AR")}`,
+          "",
+          "Ahora seleccionaremos la cantidad...",
+        ].join("\n")
       );
-      return gotoFlow(flowPrincipal);
+
+      // Importante: Usamos require() para evitar dependencias circulares
+      return gotoFlow(require("./flowCantidad"));
+    } catch (error) {
+      console.error("[Error flowFileteado]", error);
+      await flowDynamic("⚠️ Ocurrió un error. Volviendo al menú principal...");
+      return gotoFlow(require("./flowPrincipal"));
     }
-
-    const { baseItem, basePrice, baseIncluye } = currentState;
-
-    // Procesar la respuesta
-    let finalItem = baseItem;
-    let finalPrice = basePrice;
-    let finalIncluye = baseIncluye;
-
-    if (resp === "1") {
-      finalItem += " fileteado";
-      finalPrice += 10000;
-      finalIncluye += " + servicio de fileteado";
-    } else {
-    }
-
-    // Actualizar el estado con la información final del producto
-    await state.update({
-      itemParaCantidad: {
-        category: "Pernil",
-        item: finalItem,
-        price: finalPrice,
-        incluye: finalIncluye,
-      },
-    });
-
-    // Confirmar la selección al usuario
-    await flowDynamic(`✅ Perfecto, has seleccionado *${finalItem}*.`);
-
-   
-    // Ir al flujo de cantidad
-    return gotoFlow(flowCantidad);
   }
 );
 

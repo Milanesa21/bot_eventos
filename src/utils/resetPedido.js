@@ -1,11 +1,13 @@
 // utils/resetPedido.js
-const resetPedido = (state) => {
-  state.update({
+const resetPedido = async (state) => {
+  await state.update({
     pedidoActual: {
       cart: [],
       customerData: {
+        name: null,
         phone: null,
         date: null,
+        time: null,
         address: null,
         comments: null,
       },
@@ -13,15 +15,16 @@ const resetPedido = (state) => {
   });
 };
 
-const getPedidoActual = (state) => {
-  const currentState = state.getMyState();
+const getPedidoActual = async (state) => {
+  const currentState = await state.getMyState();
   return (
     currentState?.pedidoActual || {
-      // Usamos optional chaining
       cart: [],
       customerData: {
+        name: null,
         phone: null,
         date: null,
+        time: null,
         address: null,
         comments: null,
       },
