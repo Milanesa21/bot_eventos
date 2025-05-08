@@ -1,6 +1,5 @@
 // flows/flowBondiola.js
 const { addKeyword, EVENTS } = require("@bot-whatsapp/bot");
-const flowCantidad = require("./flowCantidad");
 const flowFileteado = require("./flowFileteado");
 
 const flowBondiola = addKeyword(EVENTS.ACTION).addAnswer(
@@ -29,7 +28,7 @@ const flowBondiola = addKeyword(EVENTS.ACTION).addAnswer(
           baseItem: "Bondiola fileteada (10 pers)",
           basePrice: 85000,
           baseIncluye: "60 panes + 3 salsas",
-          category: "Bondiola", // Añadir categoría
+          category: "Bondiola",
         });
         return gotoFlow(flowFileteado);
 
@@ -38,20 +37,18 @@ const flowBondiola = addKeyword(EVENTS.ACTION).addAnswer(
           baseItem: "Bondiola fileteada (5 pers)",
           basePrice: 45000,
           baseIncluye: "30 panes + 1 salsa",
-          category: "Bondiola", // Añadir categoría
+          category: "Bondiola",
         });
-        return gotoFlow(require("./flowFileteado"));
+        return gotoFlow(flowFileteado);
 
       case "3":
         await state.update({
-          itemParaCantidad: {
-            category: "Bondiola",
-            item: "Bondiola braseada (10 pers)",
-            price: 95000,
-            incluye: "2 salsas + pancitos",
-          },
+          baseItem: "Bondiola braseada (10 pers)",
+          basePrice: 95000,
+          baseIncluye: "2 salsas + pancitos",
+          category: "Bondiola",
         });
-        return gotoFlow(require("./flowFileteado"));
+        return gotoFlow(flowFileteado);
 
       default:
         await flowDynamic("❌ Opción no válida. Por favor responde 1-3 o 0.");

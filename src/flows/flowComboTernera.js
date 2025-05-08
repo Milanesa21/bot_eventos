@@ -1,7 +1,6 @@
 // flows/flowComboTernera.js
 const { addKeyword, EVENTS } = require("@bot-whatsapp/bot");
-// Importamos el flujo genérico de cantidad
-const flowCantidad = require("./flowCantidad");
+const flowFileteado = require("./flowFileteado"); // Cambiamos la importación
 
 const flowComboTernera = addKeyword(EVENTS.ACTION).addAnswer(
   [
@@ -18,7 +17,6 @@ const flowComboTernera = addKeyword(EVENTS.ACTION).addAnswer(
   async (ctx, { state, flowDynamic, fallBack, gotoFlow }) => {
     const opt = ctx.body.trim();
 
-    // Cancelar y volver al menú principal
     if (opt === "0") {
       return gotoFlow(require("./flowPrincipal"));
     }
@@ -28,40 +26,40 @@ const flowComboTernera = addKeyword(EVENTS.ACTION).addAnswer(
       case "1":
         selectedItemData = {
           category: "Combo Ternera",
-          item: "Combo Ternera (50 pers)",
-          price: 454000,
-          incluye:
-            "1 Pata de ternera + 24 empanadas, 24 chips, 24 pizzetas, 24 sándwiches",
+          baseItem: "Combo Ternera (50 pers)", // Cambiamos a baseItem
+          basePrice: 454000,
+          baseIncluye:
+            "1 Pata de ternera + 24 empanadas, 24 chips, 24 pizzetas, 24 sándwiches", // baseIncluye
         };
         break;
       case "2":
         selectedItemData = {
           category: "Combo Ternera",
-          item: "Combo Ternera (70 pers)",
-          price: 600000,
-          incluye:
+          baseItem: "Combo Ternera (70 pers)",
+          basePrice: 600000,
+          baseIncluye:
             "1 Pata de ternera + 48 empanadas, 48 chips, 48 pizzetas, 48 sándwiches",
         };
         break;
       case "3":
         selectedItemData = {
           category: "Combo Ternera",
-          item: "Combo Ternera (100 pers)",
-          price: 880000,
-          incluye:
+          baseItem: "Combo Ternera (100 pers)",
+          basePrice: 880000,
+          baseIncluye:
             "1 Pata de ternera + 96 empanadas, 96 chips, 96 pizzetas, 96 sándwiches",
         };
         break;
       default:
         await flowDynamic("❌ Opción no válida. Por favor responde 1-3 o 0.");
-        return fallBack(); // Repite la pregunta
+        return fallBack();
     }
 
-    // Guardamos el ítem seleccionado en el estado
-    await state.update({ itemParaCantidad: selectedItemData });
+    // Actualizamos el estado con la nueva estructura
+    await state.update(selectedItemData);
 
-    // Redirigimos al flujo que pregunta la cantidad
-    return gotoFlow(flowCantidad);
+    // Redirigimos al flujo fileteado
+    return gotoFlow(flowFileteado);
   }
 );
 

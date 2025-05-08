@@ -1,6 +1,5 @@
 // flows/flowTernera.js
 const { addKeyword, EVENTS } = require("@bot-whatsapp/bot");
-const flowCantidad = require("./flowCantidad");
 const flowFileteado = require("./flowFileteado");
 
 const flowTernera = addKeyword(EVENTS.ACTION).addAnswer(
@@ -26,59 +25,59 @@ const flowTernera = addKeyword(EVENTS.ACTION).addAnswer(
       return gotoFlow(require("./flowPrincipal"));
     }
 
-    let selectedItemData;
+    let selectedData;
     switch (opt) {
       case "1":
-        selectedItemData = {
+        selectedData = {
           category: "Ternera/Peceto",
-          item: "Pata de ternera (40 pers)",
-          price: 280000,
-          incluye: "200 panes + 6 salsas",
+          baseItem: "Pata de ternera (40 pers)",
+          basePrice: 280000,
+          baseIncluye: "200 panes + 6 salsas",
         };
         break;
 
       case "2":
-        await state.update({
+        selectedData = {
+          category: "Ternera/Peceto",
           baseItem: "Peceto/Vitel Toné (5 pers)",
           basePrice: 57000,
           baseIncluye: "30 panes + 1 salsa",
-          category: "Ternera/Peceto",
-        });
-        return gotoFlow(require("./flowFileteado"));
+        };
+        break;
 
       case "3":
-       await state.update({
-         category: "Ternera/Peceto",
-         baseItem: "Peceto/Vitel Toné (5 pers)",
-         basePrice: 105000,
-         baseIncluye: "60 panes + 3 salsas",
-       });
-        return gotoFlow(require("./flowFileteado"));
+        selectedData = {
+          category: "Ternera/Peceto",
+          baseItem: "Peceto/Vitel Toné (10 pers)",
+          basePrice: 105000,
+          baseIncluye: "60 panes + 3 salsas",
+        };
+        break;
 
       case "4":
-        await state.update({
+        selectedData = {
           category: "Ternera/Peceto",
           baseItem: "Bondiola Filetada (5 pers)",
           basePrice: 48000,
           baseIncluye: "30 panes + 1 salsa",
-        });
-        return gotoFlow(require("./flowFileteado"));
+        };
+        break;
 
       case "5":
-        await state.update({
+        selectedData = {
+          category: "Ternera/Peceto",
           baseItem: "Bondiola Filetada (10 pers)",
           basePrice: 95000,
           baseIncluye: "60 panes + 3 salsas",
-          category: "Ternera/Peceto",
-        });
-        return gotoFlow(require("./flowFileteado"));
+        };
+        break;
 
       case "6":
-        selectedItemData = {
+        selectedData = {
           category: "Ternera/Peceto",
-          item: "Bondiola Braseada",
-          price: 95000,
-          incluye:
+          baseItem: "Bondiola Braseada",
+          basePrice: 95000,
+          baseIncluye:
             "Desmechada a la cerveza, con cebolla caramelizada, 2 salsas y pancitos",
         };
         break;
@@ -88,18 +87,9 @@ const flowTernera = addKeyword(EVENTS.ACTION).addAnswer(
         return fallBack();
     }
 
-    // Para opciones que no requieren fileteado
-    if (selectedItemData) {
-      await state.update({ itemParaCantidad: selectedItemData });
-      await flowDynamic(
-        [
-          `✅ Selección confirmada: *${selectedItemData.item}*`,
-          `📦 Incluye: ${selectedItemData.incluye}`,
-          `💵 Precio: $${selectedItemData.price.toLocaleString("es-AR")}`,
-        ].join("\n")
-      );
-      return gotoFlow(require("./flowCantidad"));
-    }
+    // Actualizar estado y redirigir a fileteado
+    await state.update(selectedData);
+    return gotoFlow(flowFileteado);
   }
 );
 
