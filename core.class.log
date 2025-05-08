@@ -1,27 +1,60 @@
 [handleMsg]:  {
   key: {
-    remoteJid: '5493704242494@s.whatsapp.net',
+    remoteJid: '5493704245988@s.whatsapp.net',
     fromMe: false,
-    id: '3EB0950E7437C388D237D4',
+    id: 'AB4F1ED7D3E9AE2311E8B6F96F545C83',
     participant: undefined
   },
-  messageTimestamp: 1746574001,
-  pushName: 'Alan ❄️🦋 // Él',
+  messageTimestamp: 1746738427,
+  pushName: 'Diego 🐱',
   broadcast: false,
   message: Message {
-    conversation: 'ala',
+    audioMessage: AudioMessage {
+      url: 'https://mmg.whatsapp.net/v/t62.7117-24/12097399_597563706676422_5266323288380455453_n.enc?ccb=11-4&oh=01_Q5Aa1QE77noP-z9Z7N1mmauo7eDGMLMcS4zxnYPZNc8YppON2g&oe=68449FB5&_nc_sid=5e03e0&mms3=true',
+      mimetype: 'audio/ogg; codecs=opus',
+      fileSha256: [Uint8Array],
+      fileLength: [Long],
+      seconds: 19,
+      ptt: true,
+      mediaKey: [Uint8Array],
+      fileEncSha256: [Uint8Array],
+      directPath: '/v/t62.7117-24/12097399_597563706676422_5266323288380455453_n.enc?ccb=11-4&oh=01_Q5Aa1QE77noP-z9Z7N1mmauo7eDGMLMcS4zxnYPZNc8YppON2g&oe=68449FB5&_nc_sid=5e03e0',
+      mediaKeyTimestamp: [Long],
+      waveform: [Uint8Array]
+    },
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2,
       messageSecret: [Uint8Array]
     }
   },
-  body: 'ala',
-  from: '5493704524749'
+  body: '_event_voice_note__03c3b935-1b94-4f4b-a119-fec67febf4d7',
+  from: '5493704245988'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704469382@s.whatsapp.net',
+    fromMe: false,
+    id: 'B2A4ECE8A427B01627197FA8BAEC8DE0',
+    participant: undefined
+  },
+  messageTimestamp: 1746738430,
+  pushName: 'Lui E. Valdez',
+  broadcast: false,
+  message: Message {
+    conversation: 'Hol',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Hol',
+  from: '5493704469382'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_8c7f03d1-6257-4903-bc11-779db5c7bf0e',
-  keyword: 'key_99cc529e-6c6b-4f88-9ea4-f25e50a4a59e',
+  ref: 'ans_34eb258e-1463-4c41-a78c-353c7658a368',
+  keyword: 'key_439e8c39-f49b-4aad-9d6b-6b90dc9da44d',
   answer: '👋 ¡Bienvenido a Angélica Perniles!\n' +
     'Recuerda que los pedidos deben hacerse con al menos una semana de anticipación ademàs de una seña del 50%.\n',
   options: {
@@ -36,17 +69,163 @@
     keyword: {},
     callback: true
   },
-  refSerialize: '9478f1aea89a53fe50126d3cd2c6ef61'
+  refSerialize: '983579f9b639849ff44a59618b4bd9c7'
 }
 [handleMsg]:  {
   key: {
-    remoteJid: '5493704242494@s.whatsapp.net',
+    remoteJid: '5493704469382@s.whatsapp.net',
     fromMe: false,
-    id: '3EB00A5D1D86EB88C12DFE',
+    id: 'E99721C86483F67FFCD5D2C261883E8B',
     participant: undefined
   },
-  messageTimestamp: 1746574005,
-  pushName: 'Alan ❄️🦋 // Él',
+  messageTimestamp: 1746738446,
+  pushName: 'Lui E. Valdez',
+  broadcast: false,
+  message: Message {
+    conversation: '3',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: '3',
+  from: '5493704469382'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704681659@s.whatsapp.net',
+    fromMe: false,
+    id: '974CD24C2306A30AA4A430B1EC2928F4',
+    participant: undefined
+  },
+  messageTimestamp: 1746738458,
+  pushName: 'Benru',
+  broadcast: false,
+  message: Message {
+    conversation: 'XD',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'XD',
+  from: '5493704681659'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_34eb258e-1463-4c41-a78c-353c7658a368',
+  keyword: 'key_439e8c39-f49b-4aad-9d6b-6b90dc9da44d',
+  answer: '👋 ¡Bienvenido a Angélica Perniles!\n' +
+    'Recuerda que los pedidos deben hacerse con al menos una semana de anticipación ademàs de una seña del 50%.\n',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '983579f9b639849ff44a59618b4bd9c7'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704681659@s.whatsapp.net',
+    fromMe: false,
+    id: '64B3FBA3234656F48FD020B4D1DB3B4F',
+    participant: undefined
+  },
+  messageTimestamp: 1746738466,
+  pushName: 'Benru',
+  broadcast: false,
+  message: Message {
+    conversation: 'Watafak',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Watafak',
+  from: '5493704681659'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704681659@s.whatsapp.net',
+    fromMe: false,
+    id: 'AB4287298DF814E543E071BABF8B4A0A',
+    participant: undefined
+  },
+  messageTimestamp: 1746738475,
+  pushName: 'Benru',
+  broadcast: false,
+  message: Message {
+    conversation: 'Cerra el orto',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  status: 4,
+  body: 'Cerra el orto',
+  from: '5493704681659'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704469382@s.whatsapp.net',
+    fromMe: false,
+    id: '6ECDF83CF824FA0F4B6332A995D08C92',
+    participant: undefined
+  },
+  messageTimestamp: 1746738480,
+  pushName: 'Lui E. Valdez',
+  broadcast: false,
+  message: Message {
+    conversation: '3',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: '3',
+  from: '5493704469382'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704681659@s.whatsapp.net',
+    fromMe: false,
+    id: '7160D36E392542C6E169EB1E17A4D1ED',
+    participant: undefined
+  },
+  messageTimestamp: 1746738499,
+  pushName: 'Benru',
+  broadcast: false,
+  message: Message {
+    conversation: 'Alla le estan dando perniles gil',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Alla le estan dando perniles gil',
+  from: '5493704681659'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704469382@s.whatsapp.net',
+    fromMe: false,
+    id: '198F4E6BD455D4E4A0276FF91F5DC3C9',
+    participant: undefined
+  },
+  messageTimestamp: 1746738502,
+  pushName: 'Lui E. Valdez',
   broadcast: false,
   message: Message {
     conversation: '2',
@@ -56,41 +235,102 @@
       messageSecret: [Uint8Array]
     }
   },
-  verifiedBizName: 'Viviana A',
   body: '2',
-  from: '5493704242494'
+  from: '5493704469382'
 }
 [handleMsg]:  {
   key: {
-    remoteJid: '5493704242494@s.whatsapp.net',
+    remoteJid: '5493704681659@s.whatsapp.net',
     fromMe: false,
-    id: '3EB04969AAF2440F6807ED',
+    id: '238A5E70E6331F98DA5C6FCF412AF12B',
     participant: undefined
   },
-  messageTimestamp: 1746574008,
-  pushName: 'Alan ❄️🦋 // Él',
+  messageTimestamp: 1746738514,
+  pushName: 'Benru',
   broadcast: false,
   message: Message {
-    conversation: 'Barrio san Martín, Ayacucho 45',
+    conversation: 'Pata de ternera',
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2,
       messageSecret: [Uint8Array]
     }
   },
-  verifiedBizName: 'Viviana A',
-  body: 'Barrio san Martín, Ayacucho 45',
-  from: '5493704242494'
+  body: 'Pata de ternera',
+  from: '5493704681659'
 }
 [handleMsg]:  {
   key: {
-    remoteJid: '5493704242494@s.whatsapp.net',
+    remoteJid: '5493704681659@s.whatsapp.net',
     fromMe: false,
-    id: '3EB0D7B9355939ECBF85AB',
+    id: 'A7FAB74E2A0835CDE485B540FD94F0B5',
     participant: undefined
   },
-  messageTimestamp: 1746574011,
-  pushName: 'Alan ❄️🦋 // Él',
+  messageTimestamp: 1746738519,
+  pushName: 'Benru',
+  broadcast: false,
+  message: Message {
+    conversation: '????',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: '????',
+  from: '5493704681659'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704681659@s.whatsapp.net',
+    fromMe: false,
+    id: '9186348981DEAC38D6572FB8835FF094',
+    participant: undefined
+  },
+  messageTimestamp: 1746738536,
+  pushName: 'Benru',
+  broadcast: false,
+  message: Message {
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    },
+    botInvokeMessage: FutureProofMessage { message: [Message] }
+  },
+  body: '',
+  from: '5493704681659'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704681659@s.whatsapp.net',
+    fromMe: false,
+    id: '6B1CB67A8DC5E31BC8D0BF874FF2FDB2',
+    participant: undefined
+  },
+  messageTimestamp: 1746738557,
+  pushName: 'Benru',
+  broadcast: false,
+  message: Message {
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    },
+    botInvokeMessage: FutureProofMessage { message: [Message] }
+  },
+  body: '',
+  from: '5493704681659'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704469382@s.whatsapp.net',
+    fromMe: false,
+    id: '4FDCCB27D41C9E0F71C4CE2D7894FF7A',
+    participant: undefined
+  },
+  messageTimestamp: 1746738593,
+  pushName: 'Lui E. Valdez',
   broadcast: false,
   message: Message {
     conversation: '1',
@@ -100,18 +340,6 @@
       messageSecret: [Uint8Array]
     }
   },
-  verifiedBizName: 'Viviana A',
   body: '1',
-  from: '5493704242494'
+  from: '5493704469382'
 }
-[ERROR ID (ans_abff5c30-a8df-421e-b945-83251a9a8736)]:  TypeError: text.match is not a function
-    at extractUrlFromText (C:\Users\Diego Jara\Desktop\Trabajos\bot_eventos1\base-baileys-memory\node_modules\@whiskeysockets\baileys\lib\Utils\messages.js:41:67)
-    at generateLinkPreviewIfRequired (C:\Users\Diego Jara\Desktop\Trabajos\bot_eventos1\base-baileys-memory\node_modules\@whiskeysockets\baileys\lib\Utils\messages.js:45:48)
-    at generateWAMessageContent (C:\Users\Diego Jara\Desktop\Trabajos\bot_eventos1\base-baileys-memory\node_modules\@whiskeysockets\baileys\lib\Utils\messages.js:246:71)
-    at generateWAMessage (C:\Users\Diego Jara\Desktop\Trabajos\bot_eventos1\base-baileys-memory\node_modules\@whiskeysockets\baileys\lib\Utils\messages.js:507:102)
-    at Object.sendMessage (C:\Users\Diego Jara\Desktop\Trabajos\bot_eventos1\base-baileys-memory\node_modules\@whiskeysockets\baileys\lib\Socket\messages-send.js:614:69)
-    at BaileysProvider.sendText (C:\Users\Diego Jara\Desktop\Trabajos\bot_eventos1\base-baileys-memory\node_modules\@bot-whatsapp\provider\lib\baileys\index.cjs:645:28)
-    at BaileysProvider.sendMessage (C:\Users\Diego Jara\Desktop\Trabajos\bot_eventos1\base-baileys-memory\node_modules\@bot-whatsapp\provider\lib\baileys\index.cjs:736:21)
-    at CoreClass.sendProviderAndSave (C:\Users\Diego Jara\Desktop\Trabajos\bot_eventos1\base-baileys-memory\node_modules\@bot-whatsapp\bot\lib\bundle.bot.cjs:1561:46)
-    at C:\Users\Diego Jara\Desktop\Trabajos\bot_eventos1\base-baileys-memory\node_modules\@bot-whatsapp\bot\lib\bundle.bot.cjs:1332:32
-    at async runContext (C:\Users\Diego Jara\Desktop\Trabajos\bot_eventos1\base-baileys-memory\node_modules\@bot-whatsapp\bot\lib\bundle.bot.cjs:1444:17)
