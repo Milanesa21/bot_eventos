@@ -16,7 +16,6 @@ const flowConfirmacion = addKeyword(EVENTS.ACTION)
       return;
     }
 
-    // Agrupar items
     pedidoActual.cart.forEach((item) => {
       const itemKey = item.item;
       resumenAgrupado[itemKey] = resumenAgrupado[itemKey] || {
@@ -28,7 +27,6 @@ const flowConfirmacion = addKeyword(EVENTS.ACTION)
 
     const lines = ["📝 *Resumen de tu pedido:*", ""];
 
-    // Construir líneas del resumen
     Object.values(resumenAgrupado).forEach((item) => {
       lines.push(
         `${item.quantity}x ${item.item} (${item.category}) — $${(
@@ -37,7 +35,6 @@ const flowConfirmacion = addKeyword(EVENTS.ACTION)
       );
     });
 
-    // Cálculos financieros
     const subtotal = pedidoActual.cart.reduce(
       (acc, item) => acc + item.price,
       0
@@ -46,7 +43,6 @@ const flowConfirmacion = addKeyword(EVENTS.ACTION)
     const total = subtotal + seguro;
     const adelanto = total * 0.5;
 
-    // Sección de datos del cliente
     const customerData = pedidoActual.customerData || {};
     lines.push(
       "",
@@ -61,8 +57,10 @@ const flowConfirmacion = addKeyword(EVENTS.ACTION)
       "---",
       "",
       "👤 *Tus Datos*",
+      `👤 Nombre: ${customerData.name || "No especificado"}`, // Línea agregada
       `📞 Tel: ${customerData.phone || "No especificado"}`,
       `📅 Fecha: ${customerData.date || "No especificado"}`,
+      `⏰ Horario: ${customerData.time || "No especificado"}`,
       `🏠 Dirección: ${customerData.address || "No especificado"}`,
       customerData.comments ? `🗒️ Comentarios: ${customerData.comments}` : "",
       "---",
@@ -89,7 +87,7 @@ const flowConfirmacion = addKeyword(EVENTS.ACTION)
           ].join("\n")
         );
 
-        resetPedido(state); // Limpiamos solo ESTE pedido
+        resetPedido(state);
         return gotoFlow(flowPago);
       }
 

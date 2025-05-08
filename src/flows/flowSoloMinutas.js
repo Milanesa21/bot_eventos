@@ -31,7 +31,7 @@ const flowSoloMinutas = addKeyword(EVENTS.ACTION).addAnswer(
           category: "Solo Minutas",
           item: "Solo Minutas (15 pers)",
           price: 174000,
-          incluye: "24 empanadas, 48 chips, 24 pizzetas, 24 sándwiches",
+          incluye: "24 empanadas, 24 chips, 24 pizzetas, 24 sándwiches",
         };
         break;
       case "2":
