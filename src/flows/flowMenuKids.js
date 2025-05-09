@@ -8,7 +8,7 @@ const flowMenuKids = addKeyword(EVENTS.ACTION).addAnswer(
     "👶 *Menú Kids*",
     "",
     "1️⃣ Promo CUMPLE (30 niños) - Incluye: 48 pizzetas, 24 sándwiches de miga, 24 empanadas copetín, 24 salchichas envueltas, 24 patitas de pollo (~$270.000)",
-    "2️⃣ Promo ESTÁNDAR (10 pers) - Incluye: 10 chips de pollo, 10 chips de jamón y queso, 15 patitas de pollo, 10 salchichas encamisadas, 15 pizzetas (~$100.000)",
+    "2️⃣ Promo ESTÁNDAR (10 niños) - Incluye: 10 chips de pollo, 10 chips de jamón y queso, 15 patitas de pollo, 10 salchichas encamisadas, 15 pizzetas (~$100.000)",
     "0️⃣ Cancelar",
     "",
     "Responde con el número de tu elección.",

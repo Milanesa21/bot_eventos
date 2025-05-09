@@ -7,9 +7,9 @@ const flowTernera = addKeyword(EVENTS.ACTION).addAnswer(
     "🥩 *Pata de ternera y Peceto/Vitel Toné*",
     "",
     "1️⃣ Pata de ternera (40 pers) - Incluye: 200 panes + 6 salsas (~$280.000)",
-    "2️⃣ Pata de ternera Grande (60 pers) - Incluye: 200 panes + 6 salsas (~$350.000)",
-    "3️⃣ Peceto/Vitel Toné fileteado (5 pers) - Incluye: 30 panes + 1 salsa (~$57.000)",
-    "4️⃣ Peceto/Vitel Toné fileteado (10 pers) - Incluye: 60 panes + 3 salsas (~$105.000)",
+    "2️⃣ Pata de ternera Grande (60 pers) - Incluye: 300 panes + 8 salsas (~$350.000)",
+    "3️⃣ Peceto/Vitel Toné fileteado (5 pers) - Incluye: 30 panes + 1 salsa (~$57.000)", //sin fileteado extra
+    "4️⃣ Peceto/Vitel Toné fileteado (10 pers) - Incluye: 60 panes + 3 salsas (~$105.000)", //sin fileteado extra
     "0️⃣ Cancelar",
     "",
     "Responde con el número de tu elección.",

@@ -22,7 +22,7 @@ const flowCantidad = addKeyword(EVENTS.ACTION)
   .addAnswer(
     // Hacemos la pregunta un poco más genérica ya que no podemos poner el nombre del item aquí fácilmente
     [
-      "🔢 ¿Cuántos Combos del elegido desea?",
+      "🔢 ¿Cuántos Combos desea?",
       "",
       "Ejemplo (ej: 1, 2, 3...)",
       "0️⃣ para Cancelar y volver al menú",
