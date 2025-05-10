@@ -1,7 +1,8 @@
 // flows/flowNombreCliente.js
 const { addKeyword, EVENTS } = require("@bot-whatsapp/bot");
 const { getPedidoActual, resetPedido } = require("../utils/resetPedido");
-const flowTelefonoCliente = require("./flowTelefonoCliente");
+// Asegúrate que el nombre del archivo coincida con tu flujo de teléfono
+const flowTelefonoCliente = require("./flowTelefonoCliente"); // O flowDatosCliente si así se llama
 const flowPrincipal = require("./flowPrincipal");
 
 const flowNombreCliente = addKeyword(EVENTS.ACTION).addAnswer(
@@ -16,7 +17,7 @@ const flowNombreCliente = addKeyword(EVENTS.ACTION).addAnswer(
     const nombre = ctx.body.trim();
 
     if (nombre === "0") {
-      resetPedido(state);
+      await resetPedido(state); // VERIFICADO/CORREGIDO: await presente
       await flowDynamic("❌ Pedido cancelado");
       return gotoFlow(flowPrincipal);
     }
@@ -34,7 +35,7 @@ const flowNombreCliente = addKeyword(EVENTS.ACTION).addAnswer(
       return fallBack();
     }
 
-    const pedidoActual = getPedidoActual(state);
+    const pedidoActual = await getPedidoActual(state);
     await state.update({
       pedidoActual: {
         ...pedidoActual,
@@ -46,7 +47,7 @@ const flowNombreCliente = addKeyword(EVENTS.ACTION).addAnswer(
     });
 
     await flowDynamic(`✅ Nombre registrado: *${nombre}*`);
-    return gotoFlow(require("./flowTelefonoCliente"));
+    return gotoFlow(flowTelefonoCliente); // O el nombre de tu flujo de teléfono
   }
 );
 

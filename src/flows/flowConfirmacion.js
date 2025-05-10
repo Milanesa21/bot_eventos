@@ -5,50 +5,39 @@ const flowPrincipal = require("./flowPrincipal");
 const flowPago = require("./flowPago");
 
 const flowConfirmacion = addKeyword(EVENTS.ACTION)
-  .addAction(async (_, { flowDynamic, state }) => {
-    const pedidoActual = getPedidoActual(state);
-    const resumenAgrupado = {};
+  .addAction(async (_, { flowDynamic, state, gotoFlow }) => {
+    const pedidoActual = await getPedidoActual(state); // CORREGIDO: Añadido await
 
     if (!pedidoActual.cart || pedidoActual.cart.length === 0) {
       await flowDynamic(
         "🛒 Tu carrito está vacío. Escribe 'menu' para empezar."
       );
-      return;
+      return gotoFlow(require("./flowPrincipal"));
     }
 
-    pedidoActual.cart.forEach((item) => {
-      const itemKey = item.item;
-      resumenAgrupado[itemKey] = resumenAgrupado[itemKey] || {
-        ...item,
-        quantity: 0,
-      };
-      resumenAgrupado[itemKey].quantity++;
-    });
-
     const lines = ["📝 *Resumen de tu pedido:*", ""];
+    let subtotalProductos = 0;
 
-    Object.values(resumenAgrupado).forEach((item) => {
+    pedidoActual.cart.forEach((item) => {
       lines.push(
-        `${item.quantity}x ${item.item} (${item.category}) — $${(
-          item.price * item.quantity
-        ).toLocaleString("es-AR")}`
+        `${item.cantidad}x ${item.item} (${
+          item.category
+        }) — $${item.total.toLocaleString("es-AR")}`
       );
+      subtotalProductos += item.total;
     });
 
-    const subtotal = pedidoActual.cart.reduce(
-      (acc, item) => acc + item.price,
-      0
-    );
-    const seguro = 7000;
-    const total = subtotal + seguro;
-    const adelanto = total * 0.5;
+    const seguro = 7000; // Valor fijo de ejemplo
+    const totalFinal = subtotalProductos + seguro;
+    const adelanto = totalFinal * 0.5;
 
     const customerData = pedidoActual.customerData || {};
+
     lines.push(
       "",
-      `*Subtotal Productos: $${subtotal.toLocaleString("es-AR")}*`,
+      `*Subtotal Productos: $${subtotalProductos.toLocaleString("es-AR")}*`,
       `🔒 Seguro de tabla: $${seguro.toLocaleString("es-AR")}`,
-      `💰 *Total Final:* $${total.toLocaleString("es-AR")}`,
+      `💰 *Total Final:* $${totalFinal.toLocaleString("es-AR")}`,
       "",
       "---",
       "💳 *Condiciones de Pago:*",
@@ -57,7 +46,7 @@ const flowConfirmacion = addKeyword(EVENTS.ACTION)
       "---",
       "",
       "👤 *Tus Datos*",
-      `👤 Nombre: ${customerData.name || "No especificado"}`, // Línea agregada
+      `👤 Nombre: ${customerData.name || "No especificado"}`,
       `📞 Tel: ${customerData.phone || "No especificado"}`,
       `📅 Fecha: ${customerData.date || "No especificado"}`,
       `⏰ Horario: ${customerData.time || "No especificado"}`,
@@ -86,8 +75,7 @@ const flowConfirmacion = addKeyword(EVENTS.ACTION)
             "Elige tu método de pago:",
           ].join("\n")
         );
-
-        resetPedido(state);
+        await resetPedido(state); // CORREGIDO: Añadido await
         return gotoFlow(flowPago);
       }
 
@@ -99,8 +87,7 @@ const flowConfirmacion = addKeyword(EVENTS.ACTION)
             "Puedes comenzar de nuevo cuando quieras",
           ].join("\n")
         );
-
-        resetPedido(state);
+        await resetPedido(state); // CORREGIDO: Añadido await
         return gotoFlow(flowPrincipal);
       }
 

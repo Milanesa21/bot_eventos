@@ -11,25 +11,31 @@ const resetPedido = async (state) => {
         address: null,
         comments: null,
       },
+      tipo: null, // Es bueno tenerlo aquí también
     },
   });
 };
 
 const getPedidoActual = async (state) => {
   const currentState = await state.getMyState();
-  return (
-    currentState?.pedidoActual || {
-      cart: [],
-      customerData: {
-        name: null,
-        phone: null,
-        date: null,
-        time: null,
-        address: null,
-        comments: null,
-      },
-    }
-  );
+  const defaults = {
+    cart: [],
+    customerData: {
+      name: null,
+      phone: null,
+      date: null,
+      time: null,
+      address: null,
+      comments: null,
+    },
+    tipo: null, // Valor por defecto para tipo
+  };
+
+  const merged = {
+    ...defaults, // Primero los valores por defecto
+    ...(currentState?.pedidoActual || {}), // Luego se esparce el estado actual, sobrescribiendo los defaults si existen propiedades
+  };
+  return merged;
 };
 
 module.exports = { resetPedido, getPedidoActual };

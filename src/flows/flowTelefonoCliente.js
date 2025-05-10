@@ -1,6 +1,8 @@
-// flows/flowDatosCliente.js
+// flows/flowDatosCliente.js (o flowTelefonoCliente.js)
 const { addKeyword, EVENTS } = require("@bot-whatsapp/bot");
 const { getPedidoActual, resetPedido } = require("../utils/resetPedido");
+const flowFechaEvento = require("./flowFechaEvento");
+const flowPrincipal = require("./flowPrincipal");
 
 const flowDatosCliente = addKeyword(EVENTS.ACTION).addAnswer(
   [
@@ -15,24 +17,16 @@ const flowDatosCliente = addKeyword(EVENTS.ACTION).addAnswer(
   async (ctx, { flowDynamic, gotoFlow, state, fallBack }) => {
     const input = ctx.body.trim();
 
-    // Manejar cancelación
     if (input === "0") {
-      resetPedido(state);
-      await flowDynamic(
-        [
-          "❌ Pedido cancelado",
-          "Todos los datos han sido eliminados",
-          'Escribe "menu" para comenzar de nuevo',
-        ].join("\n")
-      );
+      await resetPedido(state); // VERIFICADO/CORREGIDO: await presente
+      await flowDynamic("❌ Pedido cancelado");
       return gotoFlow(require("./flowPrincipal"));
     }
 
-    // Normalizar número (quitar espacios y caracteres especiales)
     const normalizedPhone = input.replace(/[^\d]/g, "");
 
-    // Validación básica de longitud
     if (normalizedPhone.length < 8) {
+      // Ajusta la longitud mínima si es necesario
       await flowDynamic(
         [
           "❌ Número muy corto!",
@@ -43,17 +37,14 @@ const flowDatosCliente = addKeyword(EVENTS.ACTION).addAnswer(
       return fallBack();
     }
 
-    // Actualizar estado
-    const pedidoActual = getPedidoActual(state);
-    const newCustomerData = {
-      ...pedidoActual.customerData,
-      phone: normalizedPhone,
-    };
-
+    const pedidoActual = await getPedidoActual(state);
     await state.update({
       pedidoActual: {
         ...pedidoActual,
-        customerData: newCustomerData,
+        customerData: {
+          ...pedidoActual.customerData,
+          phone: normalizedPhone,
+        },
       },
     });
 
@@ -65,7 +56,7 @@ const flowDatosCliente = addKeyword(EVENTS.ACTION).addAnswer(
       ].join("\n")
     );
 
-    return gotoFlow(require("./flowFechaEvento"));
+    return gotoFlow(flowFechaEvento);
   }
 );
 

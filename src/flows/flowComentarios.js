@@ -1,49 +1,52 @@
 // flows/flowComentarios.js
 const { addKeyword, EVENTS } = require("@bot-whatsapp/bot");
 const { getPedidoActual, resetPedido } = require("../utils/resetPedido");
+const flowConfirmacion = require("./flowConfirmacion");
+const flowPrincipal = require("./flowPrincipal");
 
 const flowComentarios = addKeyword(EVENTS.ACTION).addAnswer(
-  "✏️ ¿Algún comentario o instrucción especial para tu pedido? (Ej: 'Sin picante', 'Entregar en portería')",
+  "✏️ ¿Algún comentario o instrucción especial para tu pedido? (Ej: 'Sin picante', 'Sin sal')\nSi no tienes comentarios, escribe 'No' o 'Ninguno'.\n\n0️⃣ Escribe '0' para cancelar el pedido",
   { capture: true },
   async (ctx, { flowDynamic, gotoFlow, state }) => {
     const text = ctx.body.trim();
 
-    // Manejo de cancelación
     if (text === "0") {
-      resetPedido(state); // Pasamos state al reset
-      await flowDynamic(
-        [
-          "❌ Pedido cancelado",
-          "Tu carrito y datos han sido reiniciados",
-          'Puedes empezar de nuevo escribiendo "Hola"',
-        ].join("\n")
-      );
+      await resetPedido(state); // VERIFICADO/CORREGIDO: await presente
+      await flowDynamic("❌ Pedido cancelado");
       return gotoFlow(require("./flowPrincipal"));
     }
 
-    // Actualizar comentarios en el estado
-    const pedidoActual = getPedidoActual(state);
-    const newCustomerData = {
-      ...pedidoActual.customerData,
-      comments: text,
-    };
+    const pedidoActual = await getPedidoActual(state);
+    const commentsToSave =
+      text.toLowerCase() === "no" ||
+      text.toLowerCase() === "ninguno" ||
+      text.toLowerCase() === "ningun"
+        ? null
+        : text;
 
     await state.update({
       pedidoActual: {
         ...pedidoActual,
-        customerData: newCustomerData,
+        customerData: {
+          ...pedidoActual.customerData,
+          comments: commentsToSave,
+        },
       },
     });
 
-    await flowDynamic(
-      [
-        "📝 Comentarios guardados:",
-        `"${text}"`,
-        "Serán considerados al preparar tu pedido",
-      ].join("\n")
-    );
+    if (!commentsToSave) {
+      await flowDynamic("📝 No se agregaron comentarios adicionales.");
+    } else {
+      await flowDynamic(
+        [
+          "📝 Comentarios guardados:",
+          `"${text}"`,
+          "Serán considerados al preparar tu pedido",
+        ].join("\n")
+      );
+    }
 
-    return gotoFlow(require("./flowConfirmacion"));
+    return gotoFlow(flowConfirmacion);
   }
 );
 

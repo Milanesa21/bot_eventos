@@ -18,16 +18,16 @@ const flowHorarioEvento = addKeyword(EVENTS.ACTION).addAnswer(
     const input = ctx.body.trim();
 
     if (input === "0") {
-      resetPedido(state);
+      await resetPedido(state); // CORREGIDO: Añadido await
       await flowDynamic("❌ Pedido cancelado");
       return gotoFlow(require("./flowPrincipal"));
     }
 
     // Actualizar estado con el horario
-    const pedidoActual = getPedidoActual(state);
+    const pedidoActual = await getPedidoActual(state); // CORREGIDO: Añadido await
     await state.update({
       pedidoActual: {
-        ...pedidoActual,
+        ...pedidoActual, // pedidoActual es ahora el objeto resuelto
         customerData: {
           ...pedidoActual.customerData,
           time: input,

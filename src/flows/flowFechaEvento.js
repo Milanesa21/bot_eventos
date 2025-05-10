@@ -1,7 +1,8 @@
 // flows/flowFechaEvento.js
 const { addKeyword, EVENTS } = require("@bot-whatsapp/bot");
 const { getPedidoActual, resetPedido } = require("../utils/resetPedido");
-const flowHorarioEvento = require("./flowHorarioEvento"); // Nueva importación
+const flowHorarioEvento = require("./flowHorarioEvento");
+const flowPrincipal = require("./flowPrincipal");
 
 const flowFechaEvento = addKeyword(EVENTS.ACTION).addAnswer(
   [
@@ -16,12 +17,18 @@ const flowFechaEvento = addKeyword(EVENTS.ACTION).addAnswer(
     const input = ctx.body.trim();
 
     if (input === "0") {
-      resetPedido(state);
+      await resetPedido(state); // VERIFICADO/CORREGIDO: await presente
       await flowDynamic("❌ Pedido cancelado");
       return gotoFlow(require("./flowPrincipal"));
     }
 
-    const pedidoActual = getPedidoActual(state);
+    if (input.length < 3) {
+      // Validación básica
+      await flowDynamic("❌ Fecha demasiado corta. Intenta de nuevo.");
+      return fallBack();
+    }
+
+    const pedidoActual = await getPedidoActual(state);
     await state.update({
       pedidoActual: {
         ...pedidoActual,
@@ -36,12 +43,11 @@ const flowFechaEvento = addKeyword(EVENTS.ACTION).addAnswer(
       [
         "✅ Fecha registrada:",
         `📅 *${input}*`,
-        "",
         "Ahora necesitamos el horario del evento...",
       ].join("\n")
     );
 
-    return gotoFlow(require("./flowHorarioEvento")); // Redirige al nuevo flow
+    return gotoFlow(flowHorarioEvento);
   }
 );
 

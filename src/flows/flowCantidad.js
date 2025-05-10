@@ -1,26 +1,21 @@
 // flows/flowCantidad.js
 const { addKeyword, EVENTS } = require("@bot-whatsapp/bot");
-const { pedidoActual } = require("../utils/resetPedido"); // Asumiendo que solo necesitas esto
+const { getPedidoActual } = require("../utils/resetPedido");
 
 const flowCantidad = addKeyword(EVENTS.ACTION)
-  // Usamos addAction para verificar el estado ANTES de preguntar
   .addAction(async (_, { state, flowDynamic, gotoFlow }) => {
     const currentState = await state.getMyState();
-    // Verifica si el item fue pasado correctamente en el estado
-    if (!currentState || !currentState.itemParaCantidad) {
-      console.error(
-        "ERROR en flowCantidad: No se encontró 'itemParaCantidad' en el estado."
-      );
+    if (
+      !currentState?.itemParaCantidad?.item ||
+      currentState?.itemParaCantidad?.price === undefined
+    ) {
       await flowDynamic(
-        "⚠️ Hubo un problema al seleccionar el producto. Por favor, intenta de nuevo desde el menú principal."
+        "⚠️ Hubo un problema al seleccionar el producto. Volviendo al menú principal..."
       );
-      return gotoFlow(require("./flowPrincipal")); // Vuelve al inicio si hay error
+      return gotoFlow(require("./flowPrincipal"));
     }
-    // Si todo está bien, el addAction simplemente termina y pasa al addAnswer
   })
-  // Ahora sí, preguntamos la cantidad
   .addAnswer(
-    // Hacemos la pregunta un poco más genérica ya que no podemos poner el nombre del item aquí fácilmente
     [
       "🔢 ¿Cuántos Combos desea?",
       "",
@@ -30,73 +25,77 @@ const flowCantidad = addKeyword(EVENTS.ACTION)
     { capture: true },
     async (ctx, { flowDynamic, state, fallBack, gotoFlow }) => {
       const cantidadStr = ctx.body.trim();
+      const currentState = await state.getMyState();
+      const pedidoPrevio = await getPedidoActual(state);
 
-      // Opción 0: Cancelar
+
+    
+
+      const carritoExistente = Array.isArray(pedidoPrevio.cart)
+        ? pedidoPrevio.cart
+        : [];
+
       if (cantidadStr === "0") {
-        await state.clear(); // Limpiamos estado antes de cancelar
-        await flowDynamic("Operación cancelada.");
+        await state.update({ itemParaCantidad: null });
+        await flowDynamic("❌ Operación cancelada.");
         return gotoFlow(require("./flowPrincipal"));
       }
 
       const cantidad = parseInt(cantidadStr, 10);
-      const currentState = await state.getMyState(); // Recuperamos los datos del item
 
-      // Re-verificamos el estado por seguridad
-      if (!currentState || !currentState.itemParaCantidad) {
-        console.error(
-          "ERROR en flowCantidad (callback): No se encontró 'itemParaCantidad' en el estado."
-        );
-        await flowDynamic("⚠️ Hubo un problema. Por favor, intenta de nuevo.");
-        await state.clear();
-        return gotoFlow(require("./flowPrincipal"));
-      }
-
-      // Validar cantidad numérica y positiva
       if (isNaN(cantidad) || cantidad <= 0) {
-        // Podemos opcionalmente recordar qué item estaban seleccionando
-        const itemName =
-          currentState.itemParaCantidad.item || "el producto seleccionado";
-        await flowDynamic(
-          `❌ Cantidad no válida para "${itemName}".\nPor favor, ingresa un número positivo (1, 2...) o 0 para cancelar.`
-        );
-        return fallBack(); // Vuelve a preguntar la cantidad
+        // Combinada validación
+        const mensajeErrorCantidad = isNaN(cantidad)
+          ? [
+              "❌ *Formato incorrecto*",
+              "Debes ingresar un número entero.",
+              "Ejemplos: 1, 2, 3...",
+            ].join("\n")
+          : [
+              "❌ *Cantidad inválida*",
+              "La cantidad debe ser mayor a 0.",
+              "Si deseas cancelar usa el comando 0️⃣",
+            ].join("\n");
+        await flowDynamic(mensajeErrorCantidad);
+        return fallBack();
       }
 
-      // Extraemos los detalles del item guardado en el estado
-      const { item, price, incluye, category } = currentState.itemParaCantidad;
+      const {
+        category = "General",
+        item = "Producto sin nombre",
+        price = 0,
+        incluye,
+      } = currentState.itemParaCantidad;
 
-      // Agregamos el item al carrito 'cantidad' veces
-      for (let i = 0; i < cantidad; i++) {
-        pedidoActual.cart.push({
-          category,
-          item,
-          price,
-          // Solo añadimos 'incluye' si existe en el objeto original
-          ...(incluye && { incluye }), // Sintaxis spread condicional
-        });
-      }
+      const nuevoItemParaElCarrito = {
+        category,
+        item,
+        price,
+        cantidad,
+        incluye: incluye || "Sin descripción",
+        total: price * cantidad,
+      };
 
-      // Mensaje de confirmación
-      const precioTotalItems = price * cantidad;
+      const carritoActualizado = [...carritoExistente, nuevoItemParaElCarrito];
+
+      const proximoPedidoActual = {
+        ...pedidoPrevio,
+        cart: carritoActualizado,
+      };
+ 
+      await state.update({
+        pedidoActual: proximoPedidoActual,
+        itemParaCantidad: null,
+      });
+
       await flowDynamic(
         [
           `✅ *${cantidad} x ${item}* agregado(s) al pedido.`,
-          // Opcional: Mostrar qué incluye si aplica
-          // incluye ? `   Cada uno incluye: ${incluye}` : '',
-          `💵 Subtotal por este/os item(s): $${precioTotalItems.toLocaleString(
-            "es-AR"
-          )}`,
-        ]
-          .filter(Boolean)
-          .join("\n") // filter(Boolean) elimina líneas vacías si 'incluye' no existe
+          `💵 Subtotal por este/os item(s): $${(
+            price * cantidad
+          ).toLocaleString("es-AR")}`,
+        ].join("\n")
       );
-
-      // Limpiamos el estado AHORA que terminamos con este item específico
-      await state.clear();
-      // O, si necesitas mantener otros datos en state:
-      // await state.update({ itemParaCantidad: undefined });
-
-      // Vamos al flujo estándar para seguir comprando o finalizar
       return gotoFlow(require("./flowAgregarItems"));
     }
   );
