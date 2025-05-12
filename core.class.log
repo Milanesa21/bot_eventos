@@ -1,27 +1,85 @@
 [handleMsg]:  {
   key: {
-    remoteJid: '5493704469382@s.whatsapp.net',
+    remoteJid: '5493704242494@s.whatsapp.net',
     fromMe: false,
-    id: '3EB0471439C41D3EF1CD73',
+    id: '3A79B72AD4ECFEFB4BD4',
     participant: undefined
   },
-  messageTimestamp: 1747054538,
-  pushName: 'Alan ❄️🦋 // Él',
+  messageTimestamp: 1747060572,
+  pushName: 'Viviana A',
   broadcast: false,
   message: Message {
-    conversation: 'aaa',
+    stickerMessage: StickerMessage {
+      url: 'https://mmg.whatsapp.net/v/t62.15575-24/18858299_1794901064770044_8784674685656441724_n.enc?ccb=11-4&oh=01_Q5Aa1gESFeIGqnoRkU6epjK5Xe9x59rr1n7uhcVVibqg7I2dNg&oe=68498348&_nc_sid=5e03e0&mms3=true',
+      fileSha256: [Uint8Array],
+      fileEncSha256: [Uint8Array],
+      mediaKey: [Uint8Array],
+      mimetype: 'image/webp',
+      directPath: '/v/t62.15575-24/18858299_1794901064770044_8784674685656441724_n.enc?ccb=11-4&oh=01_Q5Aa1gESFeIGqnoRkU6epjK5Xe9x59rr1n7uhcVVibqg7I2dNg&oe=68498348&_nc_sid=5e03e0',
+      fileLength: [Long],
+      mediaKeyTimestamp: [Long],
+      firstFrameLength: 197790,
+      firstFrameSidecar: [Uint8Array],
+      isAnimated: true,
+      stickerSentTs: [Long],
+      isAvatar: false
+    },
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2,
       messageSecret: [Uint8Array]
     }
   },
-  body: 'aaa',
-  from: '5493704524749'
+  verifiedBizName: 'Viviana A',
+  body: '_event_media__71224793-651c-4861-b5d3-057968870da6',
+  from: '5493704242494'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704242494@s.whatsapp.net',
+    fromMe: false,
+    id: '3A81F099B09F64074F21',
+    participant: undefined
+  },
+  messageTimestamp: 1747060583,
+  pushName: 'Viviana A',
+  broadcast: false,
+  message: Message {
+    conversation: 'Hi',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  verifiedBizName: 'Viviana A',
+  body: 'Hi',
+  from: '5493704242494'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704245988@s.whatsapp.net',
+    fromMe: false,
+    id: 'F52994568CC1B10164543E75891C04DB',
+    participant: undefined
+  },
+  messageTimestamp: 1747060583,
+  pushName: 'Diego 🐱',
+  broadcast: false,
+  message: Message {
+    conversation: 'Ósea te hablo ahora o cómo va',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Ósea te hablo ahora o cómo va',
+  from: '5493704245988'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_69096d2c-aa3a-4a7f-9f90-c5f0e145a1af',
-  keyword: 'key_6fde178a-9cac-4fcc-955b-6c959d09cd12',
+  ref: 'ans_f3a56662-468f-4279-8a16-f7906873b7f5',
+  keyword: 'key_051006e4-cf4b-4bc3-b0b4-5cb8417d7e5d',
   answer: '👋 ¡Bienvenido a Angélica Perniles!\n' +
     'Recuerda que los pedidos deben hacerse con al menos una semana de anticipación ademàs de una seña del 50%.\n',
   options: {
@@ -36,38 +94,36 @@
     keyword: {},
     callback: true
   },
-  refSerialize: 'cd22086f2ff2579abb791558e484ce47'
+  refSerialize: '47b15f67ba8e931174f57f26c4cc5ad4'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_f3a56662-468f-4279-8a16-f7906873b7f5',
+  keyword: 'key_051006e4-cf4b-4bc3-b0b4-5cb8417d7e5d',
+  answer: '👋 ¡Bienvenido a Angélica Perniles!\n' +
+    'Recuerda que los pedidos deben hacerse con al menos una semana de anticipación ademàs de una seña del 50%.\n',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '47b15f67ba8e931174f57f26c4cc5ad4'
 }
 [handleMsg]:  {
   key: {
-    remoteJid: '5493704469382@s.whatsapp.net',
+    remoteJid: '5493704245988@s.whatsapp.net',
     fromMe: false,
-    id: '3EB067ED6A66273782E78C',
+    id: '8D7116B38792B9F572FF11F9C923D294',
     participant: undefined
   },
-  messageTimestamp: 1747054542,
-  pushName: 'Alan ❄️🦋 // Él',
-  broadcast: false,
-  message: Message {
-    conversation: '3',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: '3',
-  from: '5493704524749'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5493704469382@s.whatsapp.net',
-    fromMe: false,
-    id: '3EB0DA64829CB33E352368',
-    participant: undefined
-  },
-  messageTimestamp: 1747054544,
-  pushName: 'Alan ❄️🦋 // Él',
+  messageTimestamp: 1747060591,
+  pushName: 'Diego 🐱',
   broadcast: false,
   message: Message {
     conversation: '2',
@@ -78,57 +134,39 @@
     }
   },
   body: '2',
-  from: '5493704469382'
+  from: '5493704245988'
 }
 [handleMsg]:  {
   key: {
     remoteJid: '5493704245988@s.whatsapp.net',
     fromMe: false,
-    id: '1E78F2937F99752C60D2FF3E71476B3F',
+    id: 'D15AD6B0203CB40A9A2946AF40D091ED',
     participant: undefined
   },
-  messageTimestamp: 1746884958,
+  messageTimestamp: 1747060594,
   pushName: 'Diego 🐱',
   broadcast: false,
   message: Message {
-    conversation: 'Ok xd',
+    conversation: '3',
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2,
       messageSecret: [Uint8Array]
     }
   },
-  body: 'Ok xd',
+  status: 4,
+  body: '3',
   from: '5493704245988'
-}
-[QUEUE_SE_ENVIO]:  {
-  ref: 'ans_9cac3d8e-4d89-4424-be4f-af93da33d6d6',
-  keyword: 'key_29cc1a64-fa33-4562-9e86-40f68904d930',
-  answer: '👋 ¡Bienvenido a Angélica Perniles!\n' +
-    'Recuerda que los pedidos deben hacerse con al menos una semana de anticipación ademàs de una seña del 50%.\n',
-  options: {
-    media: null,
-    buttons: [],
-    capture: false,
-    child: null,
-    delay: 0,
-    idle: null,
-    ref: null,
-    nested: [],
-    keyword: {},
-    callback: true
-  },
-  refSerialize: 'b76fc0b3ea69cd3d8a95088d3936a9d1'
 }
 [handleMsg]:  {
   key: {
-    remoteJid: '5493704469382@s.whatsapp.net',
+    remoteJid: '5493704245988@s.whatsapp.net',
     fromMe: false,
-    id: '3EB0F990D548FB8FE7A19E',
+    id: '158040357D16AA183F80FCBEF03F2F4B',
     participant: undefined
   },
-  messageTimestamp: 1747054547,
-  pushName: 'Alan ❄️🦋 // Él',
+  messageTimestamp: 1747060598,
+  pushName: 'Diego 🐱',
   broadcast: false,
   message: Message {
     conversation: '5',
@@ -139,17 +177,17 @@
     }
   },
   body: '5',
-  from: '5493704524749'
+  from: '5493704245988'
 }
 [handleMsg]:  {
   key: {
-    remoteJid: '5493704469382@s.whatsapp.net',
+    remoteJid: '5493704245988@s.whatsapp.net',
     fromMe: false,
-    id: '3EB0A11F93499F7A37A10A',
+    id: 'A793793372D7462AB3E53B828796B87C',
     participant: undefined
   },
-  messageTimestamp: 1747054550,
-  pushName: 'Alan ❄️🦋 // Él',
+  messageTimestamp: 1747060601,
+  pushName: 'Diego 🐱',
   broadcast: false,
   message: Message {
     conversation: '1',
@@ -160,38 +198,17 @@
     }
   },
   body: '1',
-  from: '5493704469382'
+  from: '5493704245988'
 }
 [handleMsg]:  {
   key: {
-    remoteJid: '5493704469382@s.whatsapp.net',
+    remoteJid: '5493704245988@s.whatsapp.net',
     fromMe: false,
-    id: '3EB0795D40DC04EB981DB5',
+    id: '526804C8543CA0F1EB1798C365422109',
     participant: undefined
   },
-  messageTimestamp: 1747054552,
-  pushName: 'Alan ❄️🦋 // Él',
-  broadcast: false,
-  message: Message {
-    conversation: '9',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: '9',
-  from: '5493704469382'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5493704469382@s.whatsapp.net',
-    fromMe: false,
-    id: '3EB0713785049802ABCFED',
-    participant: undefined
-  },
-  messageTimestamp: 1747054556,
-  pushName: 'Alan ❄️🦋 // Él',
+  messageTimestamp: 1747060603,
+  pushName: 'Diego 🐱',
   broadcast: false,
   message: Message {
     conversation: '1',
@@ -202,80 +219,17 @@
     }
   },
   body: '1',
-  from: '5493704524749'
+  from: '5493704245988'
 }
 [handleMsg]:  {
   key: {
-    remoteJid: '5493704524749@s.whatsapp.net',
+    remoteJid: '5493704245988@s.whatsapp.net',
     fromMe: false,
-    id: '3EB0686636052CA85622B3',
+    id: 'ACFAA32FA08CABF56ED73D7A2EB86FC2',
     participant: undefined
   },
-  messageTimestamp: 1747054559,
-  pushName: 'Alan ❄️🦋 // Él',
-  broadcast: false,
-  message: Message {
-    conversation: '1',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: '1',
-  from: '5493704524749'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5493704524749@s.whatsapp.net',
-    fromMe: false,
-    id: '3EB0158473CA22D0B148BF',
-    participant: undefined
-  },
-  messageTimestamp: 1747054562,
-  pushName: 'Alan ❄️🦋 // Él',
-  broadcast: false,
-  message: Message {
-    conversation: '9',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: '9',
-  from: '5493704524749'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5493704469382@s.whatsapp.net',
-    fromMe: false,
-    id: '3EB07908D14BE0674C9AE2',
-    participant: undefined
-  },
-  messageTimestamp: 1747054564,
-  pushName: 'Alan ❄️🦋 // Él',
-  broadcast: false,
-  message: Message {
-    conversation: '1',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: '1',
-  from: '5493704469382'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5493704469382@s.whatsapp.net',
-    fromMe: false,
-    id: '3EB02F5EC7029D78B0D664',
-    participant: undefined
-  },
-  messageTimestamp: 1747054566,
-  pushName: 'Alan ❄️🦋 // Él',
+  messageTimestamp: 1747060606,
+  pushName: 'Diego 🐱',
   broadcast: false,
   message: Message {
     conversation: '2',
@@ -286,17 +240,102 @@
     }
   },
   body: '2',
-  from: '5493704524749'
+  from: '5493704245988'
 }
 [handleMsg]:  {
   key: {
-    remoteJid: '5493704524749@s.whatsapp.net',
+    remoteJid: '5493704245988@s.whatsapp.net',
     fromMe: false,
-    id: '3EB0E8CFF4CA42B8DD4214',
+    id: 'C3C75EFF261B6D651E584B539211A6F3',
     participant: undefined
   },
-  messageTimestamp: 1747054571,
-  pushName: 'Alan ❄️🦋 // Él',
+  messageTimestamp: 1747060609,
+  pushName: 'Diego 🐱',
+  broadcast: false,
+  message: Message {
+    conversation: '1',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: '1',
+  from: '5493704245988'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704242494@s.whatsapp.net',
+    fromMe: false,
+    id: '3A16C725DDA16B04E6BC',
+    participant: undefined
+  },
+  messageTimestamp: 1747060613,
+  pushName: 'Viviana A',
+  broadcast: false,
+  message: Message {
+    conversation: '1',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  verifiedBizName: 'Viviana A',
+  body: '1',
+  from: '5493704242494'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704245988@s.whatsapp.net',
+    fromMe: false,
+    id: 'BD0FC3E223AB11A97F558A44B9D02814',
+    participant: undefined
+  },
+  messageTimestamp: 1747060613,
+  pushName: 'Diego 🐱',
+  broadcast: false,
+  message: Message {
+    conversation: '69',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: '69',
+  from: '5493704245988'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704245988@s.whatsapp.net',
+    fromMe: false,
+    id: 'D546980FF8F0626DDEBB42598725415B',
+    participant: undefined
+  },
+  messageTimestamp: 1747060616,
+  pushName: 'Diego 🐱',
+  broadcast: false,
+  message: Message {
+    conversation: '1',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: '1',
+  from: '5493704245988'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704245988@s.whatsapp.net',
+    fromMe: false,
+    id: '2DB073062547B7207AB8CD0639EA8EEE',
+    participant: undefined
+  },
+  messageTimestamp: 1747060619,
+  pushName: 'Diego 🐱',
   broadcast: false,
   message: Message {
     conversation: '4',
@@ -307,17 +346,127 @@
     }
   },
   body: '4',
-  from: '5493704524749'
+  from: '5493704245988'
 }
 [handleMsg]:  {
   key: {
-    remoteJid: '5493704524749@s.whatsapp.net',
+    remoteJid: '5493704245988@s.whatsapp.net',
     fromMe: false,
-    id: '3EB054FAC58F8C200479DC',
+    id: '3CA690BA37B9780C53E8B0C51FC96FC6',
     participant: undefined
   },
-  messageTimestamp: 1747054576,
-  pushName: 'Alan ❄️🦋 // Él',
+  messageTimestamp: 1747060623,
+  pushName: 'Diego 🐱',
+  broadcast: false,
+  message: Message {
+    conversation: '8',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: '8',
+  from: '5493704245988'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_ff61ed3d-2894-41d5-a731-c4e19de3e8e6',
+  keyword: 'ans_6a37741b-1466-48c9-80ec-02ff8bdfa446',
+  answer: '📏 *Elige el tamaño*\n' +
+    '\n' +
+    '1️⃣ Chica — $6.500\n' +
+    '2️⃣ Grande — $7.500\n' +
+    '\n' +
+    '0️⃣ Cancelar y volver al menú principal\n' +
+    '\n' +
+    'Responde con el número de tu elección.',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '0317ac5bd50f1e5765e348cee9aa42e6'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704242494@s.whatsapp.net',
+    fromMe: false,
+    id: '3A92DBF27B4D0E4627D4',
+    participant: undefined
+  },
+  messageTimestamp: 1747060626,
+  pushName: 'Viviana A',
+  broadcast: false,
+  message: Message {
+    conversation: '1',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  verifiedBizName: 'Viviana A',
+  body: '1',
+  from: '5493704242494'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704245988@s.whatsapp.net',
+    fromMe: false,
+    id: '18B02CBD5C613DD51F8FE8992AB0B910',
+    participant: undefined
+  },
+  messageTimestamp: 1747060626,
+  pushName: 'Diego 🐱',
+  broadcast: false,
+  message: Message {
+    conversation: '2',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: '2',
+  from: '5493704245988'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704245988@s.whatsapp.net',
+    fromMe: false,
+    id: 'FBBEAB5904FB8BC9894057170C0E1C7A',
+    participant: undefined
+  },
+  messageTimestamp: 1747060631,
+  pushName: 'Diego 🐱',
+  broadcast: false,
+  message: Message {
+    conversation: '99',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: '99',
+  from: '5493704245988'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704245988@s.whatsapp.net',
+    fromMe: false,
+    id: '2585ECD5ECD9F54ABE3513246216D18B',
+    participant: undefined
+  },
+  messageTimestamp: 1747060634,
+  pushName: 'Diego 🐱',
   broadcast: false,
   message: Message {
     conversation: '1',
@@ -328,17 +477,903 @@
     }
   },
   body: '1',
-  from: '5493704469382'
+  from: '5493704245988'
 }
 [handleMsg]:  {
   key: {
-    remoteJid: '5493704469382@s.whatsapp.net',
+    remoteJid: '5493704242494@s.whatsapp.net',
     fromMe: false,
-    id: '3EB0A2B36F14CD351F6CB5',
+    id: '3A5AA4B2E58163449BE4',
     participant: undefined
   },
-  messageTimestamp: 1747054579,
-  pushName: 'Alan ❄️🦋 // Él',
+  messageTimestamp: 1747060637,
+  pushName: 'Viviana A',
+  broadcast: false,
+  message: Message {
+    conversation: '1',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  verifiedBizName: 'Viviana A',
+  body: '1',
+  from: '5493704242494'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704245988@s.whatsapp.net',
+    fromMe: false,
+    id: '78A454B3CB53A77F4F1C34CD7894138A',
+    participant: undefined
+  },
+  messageTimestamp: 1747060640,
+  pushName: 'Diego 🐱',
+  broadcast: false,
+  message: Message {
+    conversation: '6',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: '6',
+  from: '5493704245988'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704245988@s.whatsapp.net',
+    fromMe: false,
+    id: 'E92410725D3415633197F4DC5D9B1B85',
+    participant: undefined
+  },
+  messageTimestamp: 1747060643,
+  pushName: 'Diego 🐱',
+  broadcast: false,
+  message: Message {
+    conversation: '2',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: '2',
+  from: '5493704245988'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704245988@s.whatsapp.net',
+    fromMe: false,
+    id: '32D13B663E397078CA7D422D89142027',
+    participant: undefined
+  },
+  messageTimestamp: 1747060645,
+  pushName: 'Diego 🐱',
+  broadcast: false,
+  message: Message {
+    conversation: '2',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: '2',
+  from: '5493704245988'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704245988@s.whatsapp.net',
+    fromMe: false,
+    id: '86532743C71A0ACAD01BD0EDADECAD61',
+    participant: undefined
+  },
+  messageTimestamp: 1747060650,
+  pushName: 'Diego 🐱',
+  broadcast: false,
+  message: Message {
+    conversation: '5',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: '5',
+  from: '5493704245988'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704242494@s.whatsapp.net',
+    fromMe: false,
+    id: '3AC21274C5ADE77ECFDE',
+    participant: undefined
+  },
+  messageTimestamp: 1747060651,
+  pushName: 'Viviana A',
+  broadcast: false,
+  message: Message {
+    conversation: '2',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  verifiedBizName: 'Viviana A',
+  body: '2',
+  from: '5493704242494'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704245988@s.whatsapp.net',
+    fromMe: false,
+    id: 'E454FDD68CDF6AD59665A9207D3DC102',
+    participant: undefined
+  },
+  messageTimestamp: 1747060652,
+  pushName: 'Diego 🐱',
+  broadcast: false,
+  message: Message {
+    conversation: '2',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: '2',
+  from: '5493704245988'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704245988@s.whatsapp.net',
+    fromMe: false,
+    id: '4826A7B18A883F5BE01F4AAE4FE0551F',
+    participant: undefined
+  },
+  messageTimestamp: 1747060657,
+  pushName: 'Diego 🐱',
+  broadcast: false,
+  message: Message {
+    conversation: 'Dieguiño',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Dieguiño',
+  from: '5493704245988'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704242494@s.whatsapp.net',
+    fromMe: false,
+    id: '3A5BE6D51C425CD06853',
+    participant: undefined
+  },
+  messageTimestamp: 1747060663,
+  pushName: 'Viviana A',
+  broadcast: false,
+  message: Message {
+    conversation: '2',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  verifiedBizName: 'Viviana A',
+  body: '2',
+  from: '5493704242494'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704245988@s.whatsapp.net',
+    fromMe: false,
+    id: 'E5613AE7F835A1F61C601775B8926816',
+    participant: undefined
+  },
+  messageTimestamp: 1747060663,
+  pushName: 'Diego 🐱',
+  broadcast: false,
+  message: Message {
+    conversation: '3704245988',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: '3704245988',
+  from: '5493704245988'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704242494@s.whatsapp.net',
+    fromMe: false,
+    id: '3AAB179F498BAE01D36A',
+    participant: undefined
+  },
+  messageTimestamp: 1747060669,
+  pushName: 'Viviana A',
+  broadcast: false,
+  message: Message {
+    conversation: 'Viviana Arias',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  verifiedBizName: 'Viviana A',
+  body: 'Viviana Arias',
+  from: '5493704242494'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704245988@s.whatsapp.net',
+    fromMe: false,
+    id: '890B5DEDDBC37DEBE9E9024F995A472C',
+    participant: undefined
+  },
+  messageTimestamp: 1747060675,
+  pushName: 'Diego 🐱',
+  broadcast: false,
+  message: Message {
+    conversation: 'El próximo domingo',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'El próximo domingo',
+  from: '5493704245988'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704242494@s.whatsapp.net',
+    fromMe: false,
+    id: '3AFFEE974C202FA4ED99',
+    participant: undefined
+  },
+  messageTimestamp: 1747060677,
+  pushName: 'Viviana A',
+  broadcast: false,
+  message: Message {
+    conversation: '3704242494',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  verifiedBizName: 'Viviana A',
+  body: '3704242494',
+  from: '5493704242494'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704245988@s.whatsapp.net',
+    fromMe: false,
+    id: '67582616A8EA997CC77637F93BCE5E2C',
+    participant: undefined
+  },
+  messageTimestamp: 1747060688,
+  pushName: 'Diego 🐱',
+  broadcast: false,
+  message: Message {
+    conversation: 'A las 9:30 de la noche',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'A las 9:30 de la noche',
+  from: '5493704245988'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704242494@s.whatsapp.net',
+    fromMe: false,
+    id: '3A75DD47DBC521D68E7F',
+    participant: undefined
+  },
+  messageTimestamp: 1747060689,
+  pushName: 'Viviana A',
+  broadcast: false,
+  message: Message {
+    conversation: '22 de Mayo',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  verifiedBizName: 'Viviana A',
+  body: '22 de Mayo',
+  from: '5493704242494'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704242494@s.whatsapp.net',
+    fromMe: false,
+    id: '3AE5CEFB6E331F952BA9',
+    participant: undefined
+  },
+  messageTimestamp: 1747060696,
+  pushName: 'Viviana A',
+  broadcast: false,
+  message: Message {
+    conversation: '12 hs',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  verifiedBizName: 'Viviana A',
+  body: '12 hs',
+  from: '5493704242494'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704245988@s.whatsapp.net',
+    fromMe: false,
+    id: '048DC622102C47B472932C2696220B1E',
+    participant: undefined
+  },
+  messageTimestamp: 1747060705,
+  pushName: 'Diego 🐱',
+  broadcast: false,
+  message: Message {
+    conversation: 'Napoleón Uriburu 155 barrio San Martin',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Napoleón Uriburu 155 barrio San Martin',
+  from: '5493704245988'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704245988@s.whatsapp.net',
+    fromMe: false,
+    id: 'A2140405C2E9075DD848F108ABC7C2C7',
+    participant: undefined
+  },
+  messageTimestamp: 1747060711,
+  pushName: 'Diego 🐱',
+  broadcast: false,
+  message: Message {
+    conversation: 'No',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'No',
+  from: '5493704245988'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704245988@s.whatsapp.net',
+    fromMe: false,
+    id: 'B8B28C17A5A6FC79A81C2C650216206B',
+    participant: undefined
+  },
+  messageTimestamp: 1747060721,
+  pushName: 'Diego 🐱',
+  broadcast: false,
+  message: Message {
+    conversation: '1',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: '1',
+  from: '5493704245988'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704242494@s.whatsapp.net',
+    fromMe: false,
+    id: '3AE1EBE338CBE1C2BC89',
+    participant: undefined
+  },
+  messageTimestamp: 1747060724,
+  pushName: 'Viviana A',
+  broadcast: false,
+  message: Message {
+    conversation: 'Ayacucho 45',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  verifiedBizName: 'Viviana A',
+  status: 4,
+  body: 'Ayacucho 45',
+  from: '5493704242494'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704245988@s.whatsapp.net',
+    fromMe: false,
+    id: '08A0F0DB8F32128F00849869983A0BE2',
+    participant: undefined
+  },
+  messageTimestamp: 1747060726,
+  pushName: 'Diego 🐱',
+  broadcast: false,
+  message: Message {
+    conversation: '1',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: '1',
+  from: '5493704245988'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704242494@s.whatsapp.net',
+    fromMe: false,
+    id: '3AB95586BD0BC65E8D38',
+    participant: undefined
+  },
+  messageTimestamp: 1747060751,
+  pushName: 'Viviana A',
+  broadcast: false,
+  message: Message {
+    conversation: 'Sin sal',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  verifiedBizName: 'Viviana A',
+  body: 'Sin sal',
+  from: '5493704242494'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704242494@s.whatsapp.net',
+    fromMe: false,
+    id: '3A831C3C1B0A79EA680E',
+    participant: undefined
+  },
+  messageTimestamp: 1747060773,
+  pushName: 'Viviana A',
+  broadcast: false,
+  message: Message {
+    conversation: '1',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  verifiedBizName: 'Viviana A',
+  body: '1',
+  from: '5493704242494'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704242494@s.whatsapp.net',
+    fromMe: false,
+    id: '3AFC86FC198E658595CF',
+    participant: undefined
+  },
+  messageTimestamp: 1747060780,
+  pushName: 'Viviana A',
+  broadcast: false,
+  message: Message {
+    conversation: '1',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  verifiedBizName: 'Viviana A',
+  body: '1',
+  from: '5493704242494'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704242494@s.whatsapp.net',
+    fromMe: false,
+    id: '3A80907B107F6C98B3E0',
+    participant: undefined
+  },
+  messageTimestamp: 1747060887,
+  pushName: 'Viviana A',
+  broadcast: false,
+  message: Message {
+    conversation: 'Hola',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  verifiedBizName: 'Viviana A',
+  status: 4,
+  body: 'Hola',
+  from: '5493704242494'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_f3a56662-468f-4279-8a16-f7906873b7f5',
+  keyword: 'key_051006e4-cf4b-4bc3-b0b4-5cb8417d7e5d',
+  answer: '👋 ¡Bienvenido a Angélica Perniles!\n' +
+    'Recuerda que los pedidos deben hacerse con al menos una semana de anticipación ademàs de una seña del 50%.\n',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '47b15f67ba8e931174f57f26c4cc5ad4'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704242494@s.whatsapp.net',
+    fromMe: false,
+    id: '3A147FCDE53EEFE50E0E',
+    participant: undefined
+  },
+  messageTimestamp: 1747060893,
+  pushName: 'Viviana A',
+  broadcast: false,
+  message: Message {
+    conversation: '2',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  verifiedBizName: 'Viviana A',
+  body: '2',
+  from: '5493704242494'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704242494@s.whatsapp.net',
+    fromMe: false,
+    id: '3AB631CFD71C114629F2',
+    participant: undefined
+  },
+  messageTimestamp: 1747060906,
+  pushName: 'Viviana A',
+  broadcast: false,
+  message: Message {
+    conversation: '1',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  verifiedBizName: 'Viviana A',
+  status: 4,
+  body: '1',
+  from: '5493704242494'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704242494@s.whatsapp.net',
+    fromMe: false,
+    id: '3A01F4AD231A8F709B8C',
+    participant: undefined
+  },
+  messageTimestamp: 1747060912,
+  pushName: 'Viviana A',
+  broadcast: false,
+  message: Message {
+    conversation: '2',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  verifiedBizName: 'Viviana A',
+  body: '2',
+  from: '5493704242494'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704242494@s.whatsapp.net',
+    fromMe: false,
+    id: '3AE03F5D8846107F9F6F',
+    participant: undefined
+  },
+  messageTimestamp: 1747060920,
+  pushName: 'Viviana A',
+  broadcast: false,
+  message: Message {
+    conversation: '1',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  verifiedBizName: 'Viviana A',
+  body: '1',
+  from: '5493704242494'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704242494@s.whatsapp.net',
+    fromMe: false,
+    id: '3A82BBADF1ABCF172E36',
+    participant: undefined
+  },
+  messageTimestamp: 1747060927,
+  pushName: 'Viviana A',
+  broadcast: false,
+  message: Message {
+    conversation: '2',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  verifiedBizName: 'Viviana A',
+  body: '2',
+  from: '5493704242494'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704242494@s.whatsapp.net',
+    fromMe: false,
+    id: '3AC5177475038AB6F04B',
+    participant: undefined
+  },
+  messageTimestamp: 1747060942,
+  pushName: 'Viviana A',
+  broadcast: false,
+  message: Message {
+    conversation: 'Vivi Arias',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  verifiedBizName: 'Viviana A',
+  body: 'Vivi Arias',
+  from: '5493704242494'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704242494@s.whatsapp.net',
+    fromMe: false,
+    id: '3AAAF069C48B15BB1846',
+    participant: undefined
+  },
+  messageTimestamp: 1747060950,
+  pushName: 'Viviana A',
+  broadcast: false,
+  message: Message {
+    conversation: '3704210386',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  verifiedBizName: 'Viviana A',
+  body: '3704210386',
+  from: '5493704242494'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704242494@s.whatsapp.net',
+    fromMe: false,
+    id: '3A4F8839B302A072A7DE',
+    participant: undefined
+  },
+  messageTimestamp: 1747060957,
+  pushName: 'Viviana A',
+  broadcast: false,
+  message: Message {
+    conversation: '22 de mayo',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  verifiedBizName: 'Viviana A',
+  body: '22 de mayo',
+  from: '5493704242494'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704242494@s.whatsapp.net',
+    fromMe: false,
+    id: '3A404FDBDC28702CF2A3',
+    participant: undefined
+  },
+  messageTimestamp: 1747061040,
+  pushName: 'Viviana A',
+  broadcast: false,
+  message: Message {
+    conversation: '15 hs',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  verifiedBizName: 'Viviana A',
+  body: '15 hs',
+  from: '5493704242494'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704242494@s.whatsapp.net',
+    fromMe: false,
+    id: '3AC5AB5E434A6C87F234',
+    participant: undefined
+  },
+  messageTimestamp: 1747061046,
+  pushName: 'Viviana A',
+  broadcast: false,
+  message: Message {
+    conversation: 'Ayacucho 45',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  verifiedBizName: 'Viviana A',
+  body: 'Ayacucho 45',
+  from: '5493704242494'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704242494@s.whatsapp.net',
+    fromMe: false,
+    id: '3ABA19BBD7B7C57F2576',
+    participant: undefined
+  },
+  messageTimestamp: 1747061057,
+  pushName: 'Viviana A',
+  broadcast: false,
+  message: Message {
+    conversation: 'No',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  verifiedBizName: 'Viviana A',
+  body: 'No',
+  from: '5493704242494'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704242494@s.whatsapp.net',
+    fromMe: false,
+    id: '3A4B75632A72B2A3E61E',
+    participant: undefined
+  },
+  messageTimestamp: 1747061087,
+  pushName: 'Viviana A',
+  broadcast: false,
+  message: Message {
+    conversation: '1',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  verifiedBizName: 'Viviana A',
+  body: '1',
+  from: '5493704242494'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704242494@s.whatsapp.net',
+    fromMe: false,
+    id: '3AEB1F8FE32FB4068DEA',
+    participant: undefined
+  },
+  messageTimestamp: 1747061093,
+  pushName: 'Viviana A',
+  broadcast: false,
+  message: Message {
+    conversation: '2',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  verifiedBizName: 'Viviana A',
+  body: '2',
+  from: '5493704242494'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704242494@s.whatsapp.net',
+    fromMe: false,
+    id: '3AEBBC004F55FC9D09D4',
+    participant: undefined
+  },
+  messageTimestamp: 1747061160,
+  pushName: 'Viviana A',
+  broadcast: false,
+  message: Message {
+    conversation: 'Hola',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  verifiedBizName: 'Viviana A',
+  body: 'Hola',
+  from: '5493704242494'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_f3a56662-468f-4279-8a16-f7906873b7f5',
+  keyword: 'key_051006e4-cf4b-4bc3-b0b4-5cb8417d7e5d',
+  answer: '👋 ¡Bienvenido a Angélica Perniles!\n' +
+    'Recuerda que los pedidos deben hacerse con al menos una semana de anticipación ademàs de una seña del 50%.\n',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '47b15f67ba8e931174f57f26c4cc5ad4'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704242494@s.whatsapp.net',
+    fromMe: false,
+    id: '3A1EE24B848CA943272A',
+    participant: undefined
+  },
+  messageTimestamp: 1747061167,
+  pushName: 'Viviana A',
   broadcast: false,
   message: Message {
     conversation: '7',
@@ -348,60 +1383,19 @@
       messageSecret: [Uint8Array]
     }
   },
+  verifiedBizName: 'Viviana A',
   body: '7',
-  from: '5493704469382'
+  from: '5493704242494'
 }
 [handleMsg]:  {
   key: {
-    remoteJid: '5493704469382@s.whatsapp.net',
+    remoteJid: '5493704242494@s.whatsapp.net',
     fromMe: false,
-    id: '3EB0843F2B656BB306B5F6',
+    id: '3A309B5A730559CA4DDE',
     participant: undefined
   },
-  messageTimestamp: 1747054583,
-  pushName: 'Alan ❄️🦋 // Él',
-  broadcast: false,
-  message: Message {
-    conversation: '10',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: '10',
-  from: '5493704524749'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5493704469382@s.whatsapp.net',
-    fromMe: false,
-    id: '3EB09442D0933EA3171998',
-    participant: undefined
-  },
-  messageTimestamp: 1747054586,
-  pushName: 'Alan ❄️🦋 // Él',
-  broadcast: false,
-  message: Message {
-    conversation: '3',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: '3',
-  from: '5493704524749'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5493704469382@s.whatsapp.net',
-    fromMe: false,
-    id: '3EB07F7E8725AB80128385',
-    participant: undefined
-  },
-  messageTimestamp: 1747054588,
-  pushName: 'Alan ❄️🦋 // Él',
+  messageTimestamp: 1747061176,
+  pushName: 'Viviana A',
   broadcast: false,
   message: Message {
     conversation: '1',
@@ -411,165 +1405,19 @@
       messageSecret: [Uint8Array]
     }
   },
+  verifiedBizName: 'Viviana A',
   body: '1',
-  from: '5493704524749'
+  from: '5493704242494'
 }
 [handleMsg]:  {
   key: {
-    remoteJid: '5493704469382@s.whatsapp.net',
+    remoteJid: '5493704242494@s.whatsapp.net',
     fromMe: false,
-    id: '3EB03F257001A304CDEDD4',
+    id: '3A2FC8789215BEE136C6',
     participant: undefined
   },
-  messageTimestamp: 1747054590,
-  pushName: 'Alan ❄️🦋 // Él',
-  broadcast: false,
-  message: Message {
-    conversation: '2',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: '2',
-  from: '5493704469382'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5493704469382@s.whatsapp.net',
-    fromMe: false,
-    id: '3EB0EB9C285422DAA91E98',
-    participant: undefined
-  },
-  messageTimestamp: 1747054594,
-  pushName: 'Alan ❄️🦋 // Él',
-  broadcast: false,
-  message: Message {
-    conversation: 'aaaaaa',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: 'aaaaaa',
-  from: '5493704524749'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5493704469382@s.whatsapp.net',
-    fromMe: false,
-    id: '3EB0195D58DB9F41523AAF',
-    participant: undefined
-  },
-  messageTimestamp: 1747054601,
-  pushName: 'Alan ❄️🦋 // Él',
-  broadcast: false,
-  message: Message {
-    conversation: '3704469382',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: '3704469382',
-  from: '5493704469382'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5493704469382@s.whatsapp.net',
-    fromMe: false,
-    id: '3EB0167E541FAFDD699F3A',
-    participant: undefined
-  },
-  messageTimestamp: 1747054603,
-  pushName: 'Alan ❄️🦋 // Él',
-  broadcast: false,
-  message: Message {
-    conversation: 'aaaaaaaaaaa',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: 'aaaaaaaaaaa',
-  from: '5493704524749'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5493704469382@s.whatsapp.net',
-    fromMe: false,
-    id: '3EB06AE90750EAC2B8E0CA',
-    participant: undefined
-  },
-  messageTimestamp: 1747054604,
-  pushName: 'Alan ❄️🦋 // Él',
-  broadcast: false,
-  message: Message {
-    conversation: 'aaaaaaaaaaaaa',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: 'aaaaaaaaaaaaa',
-  from: '5493704524749'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5493704469382@s.whatsapp.net',
-    fromMe: false,
-    id: '3EB0A65F643A160B392DA0',
-    participant: undefined
-  },
-  messageTimestamp: 1747054606,
-  pushName: 'Alan ❄️🦋 // Él',
-  broadcast: false,
-  message: Message {
-    conversation: 'aaaaaaaaaaaaa',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: 'aaaaaaaaaaaaa',
-  from: '5493704524749'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5493704469382@s.whatsapp.net',
-    fromMe: false,
-    id: '3EB033DD98597EBC8CFAC4',
-    participant: undefined
-  },
-  messageTimestamp: 1747054608,
-  pushName: 'Alan ❄️🦋 // Él',
-  broadcast: false,
-  message: Message {
-    conversation: 'aaaaaaaaaa',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: 'aaaaaaaaaa',
-  from: '5493704524749'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5493704469382@s.whatsapp.net',
-    fromMe: false,
-    id: '3EB0E3C5CB8970FE2AC5D7',
-    participant: undefined
-  },
-  messageTimestamp: 1747054629,
-  pushName: 'Alan ❄️🦋 // Él',
+  messageTimestamp: 1747061180,
+  pushName: 'Viviana A',
   broadcast: false,
   message: Message {
     conversation: '1',
@@ -579,18 +1427,19 @@
       messageSecret: [Uint8Array]
     }
   },
+  verifiedBizName: 'Viviana A',
   body: '1',
-  from: '5493704469382'
+  from: '5493704242494'
 }
 [handleMsg]:  {
   key: {
-    remoteJid: '5493704469382@s.whatsapp.net',
+    remoteJid: '5493704242494@s.whatsapp.net',
     fromMe: false,
-    id: '3EB033176AB57078E13478',
+    id: '3A7BCA009E105E8616DE',
     participant: undefined
   },
-  messageTimestamp: 1747054631,
-  pushName: 'Alan ❄️🦋 // Él',
+  messageTimestamp: 1747061188,
+  pushName: 'Viviana A',
   broadcast: false,
   message: Message {
     conversation: '2',
@@ -600,6 +1449,139 @@
       messageSecret: [Uint8Array]
     }
   },
+  verifiedBizName: 'Viviana A',
   body: '2',
-  from: '5493704524749'
+  from: '5493704242494'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704242494@s.whatsapp.net',
+    fromMe: false,
+    id: '3AD89120A2FFF7E9C3A9',
+    participant: undefined
+  },
+  messageTimestamp: 1747061193,
+  pushName: 'Viviana A',
+  broadcast: false,
+  message: Message {
+    conversation: 'Vivi Arias',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  verifiedBizName: 'Viviana A',
+  body: 'Vivi Arias',
+  from: '5493704242494'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704242494@s.whatsapp.net',
+    fromMe: false,
+    id: '3A5A6892A4C75AE65C15',
+    participant: undefined
+  },
+  messageTimestamp: 1747061200,
+  pushName: 'Viviana A',
+  broadcast: false,
+  message: Message {
+    conversation: '37042103764',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  verifiedBizName: 'Viviana A',
+  body: '37042103764',
+  from: '5493704242494'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704242494@s.whatsapp.net',
+    fromMe: false,
+    id: '3A668281F5C2342E53C3',
+    participant: undefined
+  },
+  messageTimestamp: 1747061205,
+  pushName: 'Viviana A',
+  broadcast: false,
+  message: Message {
+    conversation: 'Ayacucho 45',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  verifiedBizName: 'Viviana A',
+  body: 'Ayacucho 45',
+  from: '5493704242494'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704242494@s.whatsapp.net',
+    fromMe: false,
+    id: '3A5D4D3285B94FC89493',
+    participant: undefined
+  },
+  messageTimestamp: 1747061210,
+  pushName: 'Viviana A',
+  broadcast: false,
+  message: Message {
+    conversation: '20 hs',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  verifiedBizName: 'Viviana A',
+  body: '20 hs',
+  from: '5493704242494'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704242494@s.whatsapp.net',
+    fromMe: false,
+    id: '3A78A689A09D754C56DB',
+    participant: undefined
+  },
+  messageTimestamp: 1747061217,
+  pushName: 'Viviana A',
+  broadcast: false,
+  message: Message {
+    conversation: 'Ayacucho 45',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  verifiedBizName: 'Viviana A',
+  body: 'Ayacucho 45',
+  from: '5493704242494'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493704242494@s.whatsapp.net',
+    fromMe: false,
+    id: '3A0F870B23E61E199BF2',
+    participant: undefined
+  },
+  messageTimestamp: 1747061221,
+  pushName: 'Viviana A',
+  broadcast: false,
+  message: Message {
+    conversation: 'No',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  verifiedBizName: 'Viviana A',
+  body: 'No',
+  from: '5493704242494'
 }

@@ -24,8 +24,6 @@ const flowPago = addKeyword(EVENTS.ACTION)
         detalle =
           "🏦 *Transferencia Bancaria*\n" +
           "Nombre del titular: Viviana Noemí Arias\n" +
-          "CUIL: 27-32519381-1\n" +
-          "N° de cuenta (CA $): 17902623701432\n" +
           "Alias: ANGELICAPERNILES3\n" +
           "CBU: 0110262030026237014329\n";
       } else if (choice === "2") {
