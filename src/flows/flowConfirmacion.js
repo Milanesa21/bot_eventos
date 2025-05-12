@@ -6,7 +6,7 @@ const flowPago = require("./flowPago");
 
 const flowConfirmacion = addKeyword(EVENTS.ACTION)
   .addAction(async (_, { flowDynamic, state, gotoFlow }) => {
-    const pedidoActual = await getPedidoActual(state); // CORREGIDO: Añadido await
+    const pedidoActual = await getPedidoActual(state);
 
     if (!pedidoActual.cart || pedidoActual.cart.length === 0) {
       await flowDynamic(
@@ -27,16 +27,22 @@ const flowConfirmacion = addKeyword(EVENTS.ACTION)
       subtotalProductos += item.total;
     });
 
-    const seguro = 7000; // Valor fijo de ejemplo
-    const totalFinal = subtotalProductos + seguro;
-    const adelanto = totalFinal * 0.5;
+    // Verificar y calcular seguro de tabla
+    const seguroTabla = pedidoActual.seguroTabla;
+    let totalFinal = subtotalProductos;
 
+    // Si hay seguro de tabla válido (no null/undefined)
+    if (seguroTabla !== null && seguroTabla !== undefined) {
+      lines.push(`🔒 Seguro de tabla: $${seguroTabla.toLocaleString("es-AR")}`);
+      totalFinal += seguroTabla;
+    }
+
+    const adelanto = totalFinal * 0.5;
     const customerData = pedidoActual.customerData || {};
 
     lines.push(
       "",
       `*Subtotal Productos: $${subtotalProductos.toLocaleString("es-AR")}*`,
-      `🔒 Seguro de tabla: $${seguro.toLocaleString("es-AR")}`,
       `💰 *Total Final:* $${totalFinal.toLocaleString("es-AR")}`,
       "",
       "---",
@@ -75,7 +81,7 @@ const flowConfirmacion = addKeyword(EVENTS.ACTION)
             "Elige tu método de pago:",
           ].join("\n")
         );
-        await resetPedido(state); // CORREGIDO: Añadido await
+        await resetPedido(state);
         return gotoFlow(flowPago);
       }
 
@@ -87,7 +93,7 @@ const flowConfirmacion = addKeyword(EVENTS.ACTION)
             "Puedes comenzar de nuevo cuando quieras",
           ].join("\n")
         );
-        await resetPedido(state); // CORREGIDO: Añadido await
+        await resetPedido(state);
         return gotoFlow(flowPrincipal);
       }
 

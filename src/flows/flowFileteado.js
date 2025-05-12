@@ -1,10 +1,6 @@
 const { addKeyword, EVENTS } = require("@bot-whatsapp/bot");
 const { getPedidoActual } = require("../utils/resetPedido");
 
-// Importante: cambiamos las importaciones para evitar problemas de dependencia circular
-// No importamos flowCantidad aquí sino que lo requerimos cuando sea necesario
-// No importamos flowPrincipal aquí sino que lo requerimos cuando sea necesario
-
 const flowFileteado = addKeyword(EVENTS.ACTION).addAnswer(
   [
     "¿Deseas agregar servicio de fileteado por +$10.000?",
@@ -19,7 +15,7 @@ const flowFileteado = addKeyword(EVENTS.ACTION).addAnswer(
     try {
       const resp = ctx.body.trim();
       const currentState = await state.getMyState();
-      const pedidoActual = await getPedidoActual(state);
+      const pedidoActual = await getPedidoActual(state); // Obtenemos el pedido actual
 
       if (!currentState?.baseItem || !currentState?.basePrice) {
         await flowDynamic(
@@ -63,7 +59,7 @@ const flowFileteado = addKeyword(EVENTS.ACTION).addAnswer(
           : "Servicio profesional de fileteado";
       }
 
-      // Actualizamos el estado con la información del item seleccionado
+      // Actualizamos el estado incluyendo el pedidoActual modificado
       await state.update({
         itemParaCantidad: {
           category: currentState.category || "Ternera/Peceto",
@@ -71,7 +67,7 @@ const flowFileteado = addKeyword(EVENTS.ACTION).addAnswer(
           price: finalPrice,
           incluye: finalIncluye.trim() || null,
         },
-        // Limpiamos los datos temporales
+        pedidoActual: pedidoActual, // Aquí aplicamos los cambios
         baseItem: null,
         basePrice: null,
         baseIncluye: null,
@@ -88,7 +84,6 @@ const flowFileteado = addKeyword(EVENTS.ACTION).addAnswer(
         ].join("\n")
       );
 
-      // Importante: Usamos require() para evitar dependencias circulares
       return gotoFlow(require("./flowCantidad"));
     } catch (error) {
       console.error("[Error flowFileteado]", error);

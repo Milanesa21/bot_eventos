@@ -2,6 +2,8 @@
 const { addKeyword, EVENTS } = require("@bot-whatsapp/bot");
 const flowPrincipal = require("./flowPrincipal");
 const flowFileteado = require("./flowFileteado");
+// Importar la función para obtener el estado actual del pedido de forma segura
+const { getPedidoActual } = require("../utils/resetPedido"); // Asegúrate que la ruta sea correcta
 
 const flowPernil = addKeyword(EVENTS.ACTION).addAnswer(
   [
@@ -20,7 +22,7 @@ const flowPernil = addKeyword(EVENTS.ACTION).addAnswer(
 
     if (opt === "0") {
       await flowDynamic("❌ Pedido cancelado");
-      return gotoFlow(flowPrincipal);
+      return gotoFlow(require("./flowPrincipal"));
     }
 
     let selectedData;
@@ -57,15 +59,31 @@ const flowPernil = addKeyword(EVENTS.ACTION).addAnswer(
         return fallBack();
     }
 
-    // Actualizar estado y confirmación común para todas las opciones
-    await state.update(selectedData);
+    // --- Inicio: Lógica para actualizar seguroTabla ---
+    // Obtener el estado actual del pedido usando la función auxiliar
+    const pedidoActual = await getPedidoActual(state);
+    
+   
+    await state.update({
+      ...selectedData, 
+      pedidoActual: pedidoActual, 
+    });
 
+    // Mensaje de confirmación (no muestra el seguro de tabla aquí, solo la selección base)
     await flowDynamic(
       [
         `✅ Selección base: *${selectedData.baseItem}*`,
         `📦 Incluye: ${selectedData.baseIncluye}`,
         `💵 Precio base: $${selectedData.basePrice.toLocaleString("es-AR")}`,
-      ].join("\n")
+        // Opcional: Mostrar si se añadió el seguro
+        pedidoActual.seguroTabla === 7000
+          ? `🔒 Se añadió seguro de tabla: $${pedidoActual.seguroTabla.toLocaleString(
+              "es-AR"
+            )}`
+          : "",
+      ]
+        .filter(Boolean)
+        .join("\n") // filter(Boolean) elimina strings vacíos si no se añadió seguro
     );
 
     return gotoFlow(flowFileteado);

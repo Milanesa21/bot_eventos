@@ -12,6 +12,7 @@ const resetPedido = async (state) => {
         comments: null,
       },
       tipo: null, // Es bueno tenerlo aquí también
+      seguroTabla: null, // Nuevo campo añadido con valor predeterminado null
     },
   });
 };
@@ -29,12 +30,26 @@ const getPedidoActual = async (state) => {
       comments: null,
     },
     tipo: null, // Valor por defecto para tipo
+    seguroTabla: null, // Nuevo campo añadido con valor predeterminado null
   };
 
+  // Primero los valores por defecto
+  // Luego se esparce el estado actual, sobrescribiendo los defaults si existen propiedades
+  // Finalmente, se asegura de que customerData exista y se mezcla con sus defaults si es necesario
   const merged = {
-    ...defaults, // Primero los valores por defecto
-    ...(currentState?.pedidoActual || {}), // Luego se esparce el estado actual, sobrescribiendo los defaults si existen propiedades
+    ...defaults,
+    ...(currentState?.pedidoActual || {}),
+    customerData: {
+      ...defaults.customerData, // Asegura los defaults de customerData
+      ...(currentState?.pedidoActual?.customerData || {}), // Sobrescribe con los datos del cliente del estado si existen
+    },
   };
+
+  // Asegurarse de que seguroTabla siempre exista, usando el default si no está en el estado
+  if (merged.seguroTabla === undefined) {
+    merged.seguroTabla = defaults.seguroTabla; // Asigna null si no estaba definido
+  }
+
   return merged;
 };
 
