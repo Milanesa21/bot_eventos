@@ -28,7 +28,7 @@ const opcionesMenu = [
   "🔟 Panadería",
   "0️⃣ Consultar con el chef",
   "",
-  "Por favor, seleccione el numero de lo que quiera solicitar. 😊",
+  "Por favor, Responde con el número de tu elección. 😊",
 ];
 
 const mensajeError = [
@@ -62,13 +62,11 @@ const flowPrincipal = addKeyword(EVENTS.ACTION)
         mensajeConfirmacion
       ) => {
         const pedidoActualRecuperado = await getPedidoActual(state);
-   
+
         const nuevoEstadoPedido = {
           ...pedidoActualRecuperado,
           tipo: tipoCategoriaSeleccionada,
         };
-    
-    
 
         await state.update({ pedidoActual: nuevoEstadoPedido });
         await flowDynamic(mensajeConfirmacion);

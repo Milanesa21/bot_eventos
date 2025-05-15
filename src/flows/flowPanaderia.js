@@ -8,7 +8,7 @@ const flowPanaderia = addKeyword(EVENTS.ACTION).addAnswer(
     "🥖 *Panadería*",
     "",
     "1️⃣ Bagels (40 unidades) - ~$15.000",
-    "2️⃣ Lactal Integral (36 unidades) - ~$5.000",
+    "2️⃣ Lactal Integral - ~$5.000",
     "3️⃣ Pan de Manteca (40 unidades) - ~$15.000",
     "0️⃣ Cancelar",
     "",
