@@ -3,6 +3,11 @@ const { createBot, createProvider, createFlow } = require("@bot-whatsapp/bot");
 const QRPortalWeb = require("@bot-whatsapp/portal");
 const BaileysProvider = require("@bot-whatsapp/provider/baileys");
 const MockAdapter = require("@bot-whatsapp/database/mock");
+const {
+  startHealthReporting,
+  stopHealthReporting,
+} = require("./healthReporter");
+
 
 // Importar flujos
 const flowPrincipal = require("./flows/flowPrincipal");
@@ -73,8 +78,27 @@ async function main() {
     database: adapterDB,
   });
 
+  // ---- Añadir esto después de crear el bot ----
+  // Iniciar el reporte de salud periódico
+  startHealthReporting(adapterProvider); // Pasamos el proveedor al reporter
+
+  // Manejar el cierre para detener el reporte
+  process.on("exit", stopHealthReporting);
+  process.on("SIGINT", () => {
+    // Ctrl+C
+    stopHealthReporting();
+    process.exit();
+  });
+  process.on("SIGTERM", () => {
+    // Señal de terminación
+    stopHealthReporting();
+    process.exit();
+  });
+  // --------------------------------------------
+
   // Mostrar QR en navegador
-  QRPortalWeb();
+  QRPortalWeb(); // Asume que esto no bloquea el event loop para el setInterval
+  // Si lo bloquea, considera ejecutarlo de otra forma o en un worker.
 }
 
 main();
